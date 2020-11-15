@@ -2,7 +2,19 @@
   "name": "@vanilla-jsx/jsx-runtime",
   "version": "1.0.0",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vanilla-jsx/vanilla-jsx.git"
+  },
   "author": "BoltDoggy",
   "license": "ISC",
-  "description": "vanilla jsx without Vue.js or React.js"
+  "description": "vanilla jsx without Vue.js or React.js",
+  "gitHead": "738ba56a9d6f498a09d2a8c251fd1c9235db6294",
+  "bugs": {
+    "url": "https://github.com/vanilla-jsx/vanilla-jsx/issues"
+  },
+  "homepage": "https://github.com/vanilla-jsx/vanilla-jsx#readme",
+  "files": [
+    "index.js"
+  ]
 }
