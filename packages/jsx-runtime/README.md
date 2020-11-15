@@ -2,8 +2,6 @@
 
 vanilla jsx without Vue.js or React.js
 
-[https://vanilla-jsx.github.io/vanilla-jsx/](https://vanilla-jsx.github.io/vanilla-jsx/)
-
 ## install and config
 
 ```bash

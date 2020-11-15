@@ -1,3 +1,8 @@
 {
-    "name": "@vanilla-jsx/jsx-runtime"
+  "name": "@vanilla-jsx/jsx-runtime",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "BoltDoggy",
+  "license": "ISC",
+  "description": "vanilla jsx without Vue.js or React.js"
 }
