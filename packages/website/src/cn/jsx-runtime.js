@@ -66,7 +66,7 @@ document.body.append(<Content />);
 function Content() {
     return <>
         <h1>vanilla-jsx</h1>
-        <p>vanilla jsx 而不需要 Vue.js 或 React.js | <a href="https://github.com/vanilla-jsx/vanilla-jsx" target="_blank">github</a>/<a href="https://github.com/vanilla-jsx/vanilla-jsx/tree/main/packages/website" target="_blank">website</a></p>
+        <p>vanilla jsx 而不需要 Vue.js 或 React.js | <a href="#/cn/jsx">重新定义 JSX</a> | <a href="https://github.com/vanilla-jsx/vanilla-jsx" target="_blank">github</a>/<a href="https://github.com/vanilla-jsx/vanilla-jsx/tree/main/packages/website" target="_blank">website</a></p>
         <p style="color: red">使用 html attr, 如: style</p>
         <ComponentWithStyle>带样式的组件, 可以基于 html attr 实现 scoped</ComponentWithStyle>
         <ComponnetWithEvent></ComponnetWithEvent>

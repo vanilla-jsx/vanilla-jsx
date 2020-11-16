@@ -5,12 +5,15 @@ import JsxRuntimePage from './jsx-runtime';
 
 import CnComponentPage from './cn/component';
 import CnJsxRuntimePage from './cn/jsx-runtime';
+import CnJsx from './cn/jsx';
 
 const Root = Component((_, ctx) => {
     window.addEventListener('hashchange', () => ctx.render());
 
     return () => {
-        if (location.hash === '#/cn/component') {
+        if (location.hash === '#/cn/jsx') {
+            return <CnJsx></CnJsx>;
+        } if (location.hash === '#/cn/component') {
             return <CnComponentPage></CnComponentPage>;
         } else if (location.hash === '#/cn') {
             return <CnJsxRuntimePage></CnJsxRuntimePage>;
