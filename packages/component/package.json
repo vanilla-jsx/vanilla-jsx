@@ -1,5 +1,5 @@
 {
-  "name": "@vanilla/component",
+  "name": "@vanilla-jsx/component",
   "version": "1.0.1",
   "description": "",
   "main": "index.js",
@@ -7,5 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "gitHead": "ec957781e2e5cdc67e8a30df86b5b59fbd7b1c9b",
+  "files": [
+    "index.js"
+  ]
 }
