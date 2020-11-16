@@ -226,7 +226,7 @@ const Content = Component((_, ctx) => {
     </>
 })
 
-const Content = Component(({ img }) => {
+const Content = Component(() => {
     return () => {
         return <>
             <StylePre></StylePre>

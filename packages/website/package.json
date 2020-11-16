@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@vanilla-jsx/component": "^1.0.1",
     "@vanilla-jsx/jsx-runtime": "^1.0.1"
   }
 }

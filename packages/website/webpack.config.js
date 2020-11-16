@@ -1,11 +1,6 @@
 const path = require('path');
 
 module.exports = {
-    resolve: {
-        alias: {
-            '@vanilla-jsx/component': path.resolve(__dirname, '../component/index.js')
-        }
-    },
     module: {
         rules: [
             {
