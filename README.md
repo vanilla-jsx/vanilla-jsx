@@ -30,6 +30,10 @@ then, coding js with jsx.
 
 ## example
 
+[Full Project](https://github.com/vanilla-jsx/vanilla-jsx/tree/main/packages/website)
+
+Run yourself: clone this repo, and `npm run serve`
+
 ```js
 function ComponnetWithEvent() {
     const button = <button style="margin-top: 30px">click me</button>;
