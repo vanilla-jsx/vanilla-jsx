@@ -2,10 +2,7 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "build:jsx-runtime:example-preview": "cd packages/jsx-runtime/examples && babel ./src/index.js",
-    "build:jsx-runtime:example": "cd packages/jsx-runtime/examples && webpack",
     "serve:jsx-runtime:example": "cd packages/jsx-runtime/examples && webpack serve",
-    "build:component:example": "cd packages/component/examples && webpack",
     "serve:component:example": "cd packages/component/examples && webpack serve",
     "serve": "cd packages/website && webpack serve",
     "build:website": "cd packages/website && webpack",

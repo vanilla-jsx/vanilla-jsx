@@ -11,5 +11,8 @@
   "gitHead": "ec957781e2e5cdc67e8a30df86b5b59fbd7b1c9b",
   "files": [
     "index.js"
-  ]
+  ],
+  "dependencies": {
+    "@vanilla-jsx/jsx-runtime": "^1.0.1"
+  }
 }
