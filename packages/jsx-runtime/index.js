@@ -6,7 +6,9 @@ exports.jsxs = exports.jsx = (tag, { children, ...props } = {}) => {
             element.setAttribute(key, props[key])
         });
 
-        if (children instanceof Array) {
+        if (!children) {
+
+        } else if (children instanceof Array) {
             children.forEach((child) => {
                 element.append(child);
             });
@@ -25,7 +27,9 @@ exports.jsxs = exports.jsx = (tag, { children, ...props } = {}) => {
 exports.Fragment = ({ children } = {}) => {
     const element = document.createDocumentFragment();
 
-    if (children instanceof Array) {
+    if (!children) {
+
+    } else if (children instanceof Array) {
         children.forEach((child) => {
             element.append(child);
         });
