@@ -12,7 +12,7 @@ module.exports = function (constructor) {
 
         const render = constructor(props, ctx);
 
-        const run = () => {
+        const run = async () => {
             requestAnimationFrame(run);
             if (!renderLock) {
                 renderLock = true;
@@ -20,7 +20,7 @@ module.exports = function (constructor) {
                 while(shadow.hasChildNodes()) {
                     shadow.removeChild(shadow.firstChild);
                 }
-                shadow.append(render());
+                shadow.append(await render());
                 if (activeElement) {
                     activeElement.focus();
                 }

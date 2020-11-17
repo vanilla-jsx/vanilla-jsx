@@ -1,26 +1,34 @@
+import 'regenerator-runtime/runtime';
 import Component from '@vanilla-jsx/component';
-
-import ComponentPage from './component';
-import JsxRuntimePage from './jsx-runtime';
-
-import CnComponentPage from './cn/component';
-import CnJsxRuntimePage from './cn/jsx-runtime';
-import CnJsx from './cn/jsx';
 
 const Root = Component((_, ctx) => {
     window.addEventListener('hashchange', () => ctx.render());
 
-    return () => {
-        if (location.hash === '#/cn/jsx') {
-            return <CnJsx></CnJsx>;
+    return async () => {
+        if (location.hash === '#/cn/web-components') {
+            const { default: Page } = await import('./cn/web-components.js');
+            return <Page></Page>;
+        } else if (location.hash === '#/cn/canvas') {
+            const { default: Page } = await import('./cn/canvas');
+            return <Page></Page>;
+        } if (location.hash === '#/cn/jsx') {
+            const { default: Page } = await import('./cn/jsx');
+            return <Page></Page>;
         } if (location.hash === '#/cn/component') {
-            return <CnComponentPage></CnComponentPage>;
+            const { default: Page } = await import('./cn/component');
+            return <Page></Page>;
         } else if (location.hash === '#/cn') {
-            return <CnJsxRuntimePage></CnJsxRuntimePage>;
+            const { default: Page } = await import('./cn/jsx-runtime');
+            return <Page></Page>;
+        } else if (location.hash === '#/web-components') {
+            const { default: Page } = await import('./web-components.js');
+            return <Page></Page>;
         } else if (location.hash === '#/component') {
-            return <ComponentPage></ComponentPage>;
+            const { default: Page } = await import('./component');
+            return <Page></Page>;
         } else {
-            return <JsxRuntimePage></JsxRuntimePage>;
+            const { default: Page } = await import('./jsx-runtime');
+            return <Page></Page>;
         }
     }
 });

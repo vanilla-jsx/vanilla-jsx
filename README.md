@@ -12,7 +12,7 @@ npm i @vanilla-jsx/jsx-runtime
 
 and edit `babel.config.js` or `.babelrc` or other babel config:
 
-```
+```js
 ...
     presets: [
         ...
@@ -68,4 +68,39 @@ function Content() {
 }
 
 document.body.append(<Content />);
+```
+
+## use with WebComponents
+
+if you want Component with state, you can use WebComponents.
+
+WebComponents = CustomElements + ShadowDOM + TemplatesAndSlots. 详见 [MDN](https://developer.mozilla.org/zh-CN/docs/Web/Web_Components).
+
+Kebab case Tag is built to HTML Tag.
+
+Use JSX instead of `getElementById` for get templates at CustomElements.
+
+You can define CustomElements by `customElements.define('kebab-case-name', constructor)`.
+
+Then `<kebab-case-name />`.
+
+For example:
+
+[demo](https://vanilla-jsx.github.io/vanilla-jsx/#/web-components)
+
+```js
+class Bolt extends HTMLElement {
+    constructor() {
+        super();
+
+        const shadow = this.attachShadow({ mode: 'open' });
+        shadow.append(<div><slot /></div>);
+    }
+}
+
+customElements.define('bolt-a', Bolt);
+
+function Content() {
+    return <bolt-a></bolt-a>
+}
 ```
