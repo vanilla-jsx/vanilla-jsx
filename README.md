@@ -101,6 +101,6 @@ class Bolt extends HTMLElement {
 customElements.define('bolt-a', Bolt);
 
 function Content() {
-    return <bolt-a></bolt-a>
+    return <bolt-a>Here is used for slot</bolt-a>
 }
 ```

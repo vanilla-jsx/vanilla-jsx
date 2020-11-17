@@ -39,7 +39,7 @@ class Bolt extends HTMLElement {
 customElements.define('bolt-a', Bolt);
 
 function Content() {
-    return <bolt-a></bolt-a>
+    return <bolt-a>这里被用于 slot</bolt-a>
 }
 `}</code></pre>
         </bolt-a>
