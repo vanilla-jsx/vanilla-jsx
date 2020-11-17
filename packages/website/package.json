@@ -1,6 +1,6 @@
 {
   "name": "@vanilla-jsx/website",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": "true",
   "description": "",
   "main": "babel.config.js",
@@ -10,8 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@vanilla-jsx/component": "^1.1.0",
-    "@vanilla-jsx/jsx-runtime": "^1.1.0",
+    "@vanilla-jsx/component": "^1.2.0",
+    "@vanilla-jsx/jsx-runtime": "^1.2.0",
     "regenerator-runtime": "^0.13.7"
   }
 }
