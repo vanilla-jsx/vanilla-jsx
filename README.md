@@ -72,13 +72,13 @@ document.body.append(<Content />);
 
 ## use with WebComponents
 
-if you want Component with state, you can use WebComponents.
+If you want Component with state, you can use WebComponents.
 
 WebComponents = CustomElements + ShadowDOM + TemplatesAndSlots. 详见 [MDN](https://developer.mozilla.org/zh-CN/docs/Web/Web_Components).
 
-Kebab case Tag is built to HTML Tag.
+Use JSX instead of `getElementById` for getting templates at CustomElements.
 
-Use JSX instead of `getElementById` for get templates at CustomElements.
+Kebab case Tag is built to HTML Tag.
 
 You can define CustomElements by `customElements.define('kebab-case-name', constructor)`.
 
