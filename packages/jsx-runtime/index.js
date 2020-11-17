@@ -1,6 +1,14 @@
-exports.jsxs = exports.jsx = (tag, { children, ...props } = {}) => {
+exports.jsxs = exports.jsx = (tag, { ref, children, ...props } = {}) => {
     if (typeof tag === 'string') {
         const element = document.createElement(tag);
+
+        if (!ref) {
+
+        } if (typeof ref === 'function') {
+            ref(element);
+        } else {
+            element.setAttribute('ref', ref)
+        }
 
         Object.keys(props).forEach((key) => {
             if (props[key]) {
@@ -20,7 +28,7 @@ exports.jsxs = exports.jsx = (tag, { children, ...props } = {}) => {
 
         return element;
     } else if (typeof tag === 'function') {
-        return tag({ children, ...props });
+        return tag({ ref, children, ...props });
     } else {
         console.error('未知 tag 类型', tag);
     }

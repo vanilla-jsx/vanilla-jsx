@@ -62,6 +62,9 @@ function Content() {
         <h1>vanilla-jsx</h1>
         <p>vanilla jsx without Vue.js or React.js</p>
         <p style="color: red">with attr, eg: style</p>
+        <p ref={(ele) => {
+            console.log(ele);
+        }}>with ref, for get this dom.</p>
         <ComponentWithStyle>Component with style, support scoped use attr</ComponentWithStyle>
         <ComponnetWithEvent></ComponnetWithEvent>
     </>;

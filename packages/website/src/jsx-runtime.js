@@ -51,6 +51,9 @@ function Content() {
         <h1>vanilla-jsx</h1>
         <p>vanilla jsx without Vue.js or React.js</p>
         <p style="color: red">with attr, eg: style</p>
+        <p ref={(ele) => {
+            console.log(ele);
+        }}>with ref, for get this dom.</p>
         <ComponentWithStyle>Component with style, support scoped use attr</ComponentWithStyle>
         <ComponnetWithEvent></ComponnetWithEvent>
     </>;
@@ -66,6 +69,9 @@ function Content() {
         <h1>vanilla-jsx</h1>
         <p>vanilla jsx without Vue.js or React.js | <a href="#/cn">中文</a> | <a href="https://github.com/vanilla-jsx/vanilla-jsx" target="_blank">github</a>/<a href="https://github.com/vanilla-jsx/vanilla-jsx/tree/main/packages/website" target="_blank">website</a></p>
         <p style="color: red">with attr, eg: style</p>
+        <p ref={(ele) => {
+            console.log(ele);
+        }}>with ref, for get this dom.</p>
         <ComponentWithStyle>Component with style, support scoped use attr</ComponentWithStyle>
         <ComponnetWithEvent></ComponnetWithEvent>
         <SourceCode></SourceCode>
