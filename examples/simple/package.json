@@ -1,6 +1,6 @@
 {
   "name": "@vanilla-jsx/simple",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "private": "true",
   "description": "",
   "main": "babel.config.js",
@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@vanilla-jsx/jsx-runtime": "^1.2.0"
+    "@vanilla-jsx/jsx-runtime": "^1.2.1"
   }
 }
