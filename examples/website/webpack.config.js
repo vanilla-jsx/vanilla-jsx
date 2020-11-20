@@ -1,19 +1,19 @@
 const path = require('path');
 
 module.exports = {
-    resolve: {
-        alias: {
-            '@vanilla-jsx/component': path.resolve(__dirname, '../index.js')
-        }
-    },
     module: {
         rules: [
             {
                 test: /\.m?js$/,
                 exclude: /node_modules/,
-                use: {
-                    loader: "babel-loader"
-                }
+                use: 'babel-loader'
+            },
+            {
+                test: /.mdx?$/,
+                use: [
+                    'babel-loader',
+                    '@vanilla-jsx/mdx-loader'
+                ]
             }
         ]
     },

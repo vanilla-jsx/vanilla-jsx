@@ -1,3 +1,5 @@
+import Prismjs from 'prismjs'
+
 function ComponnetWithEvent() {
     const button = <button style="margin-top: 30px">click me</button>;
 
@@ -22,8 +24,11 @@ function ComponentWithStyle({ children }) {
 
 function SourceCode() {
     return <>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.css" />
     <h3>Source code:</h3>
-    <pre style="background: #eee; color: #333; padding: 32px;"><code>{`
+    <pre style="background: #eee; color: #333; padding: 32px;"><code class="language-javascript" ref={(ele) => {
+            Prismjs.highlightElement(ele);
+    }}>{`
 function ComponnetWithEvent() {
     const button = <button style="margin-top: 30px">click me</button>;
 

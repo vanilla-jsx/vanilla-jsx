@@ -2,14 +2,6 @@ exports.jsxs = exports.jsx = (tag, { ref, children, ...props } = {}) => {
     if (typeof tag === 'string') {
         const element = document.createElement(tag);
 
-        if (!ref) {
-
-        } if (typeof ref === 'function') {
-            ref(element);
-        } else {
-            element.setAttribute('ref', ref)
-        }
-
         Object.keys(props).forEach((key) => {
             if (props[key]) {
                 element.setAttribute(key, props[key])
@@ -24,6 +16,14 @@ exports.jsxs = exports.jsx = (tag, { ref, children, ...props } = {}) => {
             });
         } else {
             element.append(children);
+        }
+
+        if (!ref) {
+
+        } else if (typeof ref === 'function') {
+            ref(element);
+        } else {
+            element.setAttribute('ref', ref)
         }
 
         return element;

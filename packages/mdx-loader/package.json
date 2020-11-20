@@ -1,0 +1,23 @@
+{
+  "name": "@vanilla-jsx/mdx-loader",
+  "version": "1.2.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vanilla-jsx/vanilla-jsx.git"
+  },
+  "author": "BoltDoggy",
+  "license": "ISC",
+  "description": "vanilla jsx without Vue.js or React.js",
+  "gitHead": "ec957781e2e5cdc67e8a30df86b5b59fbd7b1c9b",
+  "bugs": {
+    "url": "https://github.com/vanilla-jsx/vanilla-jsx/issues"
+  },
+  "homepage": "https://github.com/vanilla-jsx/vanilla-jsx#readme",
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "@mdx-js/mdx": "^1.6.21"
+  }
+}

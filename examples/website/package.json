@@ -12,6 +12,8 @@
   "dependencies": {
     "@vanilla-jsx/component": "^1.2.0",
     "@vanilla-jsx/jsx-runtime": "^1.2.0",
+    "@vanilla-jsx/mdx-loader": "^1.2.0",
+    "prismjs": "^1.22.0",
     "regenerator-runtime": "^0.13.7"
   }
 }

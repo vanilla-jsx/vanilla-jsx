@@ -19,14 +19,14 @@ const EventListener = ({ is: Is = 'event-listener', children, name, on, ...props
 
 const DefineComponent = () => {
     return <>
-        <p>定义一个带状态的组件.</p>
-        <pre><code>{`
+        <p>define a component with state.</p>
+            <pre><code>{`
 import Component from '@vanilla-jsx/component'
 
 const Content = Component((props, ctx) => {
-    // 这里的代码仅在组件初始化时执行一次.
+    // run here once after Content component inited.
     return () => {
-        // 这里的代码在触发 ctx.render() 时每次都执行.
+        // run here when ctx.render() every time.
         return <div></div>
     }
 });
@@ -44,12 +44,14 @@ const SetState = Component((_, ctx) => () => {
     margin-right: 12px;
 }
 `}</style>
-        <p>操作 ctx 来 get/set state</p>
-        <EventListener is="button" name="click" on={() => {
-            ctx.num = ctx.num || 0;
-            ctx.num += 1;
-            ctx.render();
-        }}>点我</EventListener> {ctx.num || ''}
+        <p>get/set state from ctx</p>
+        <button ref={(button) => {
+            button.addEventListener('click', () => {
+                ctx.num = ctx.num || 0;
+                ctx.num += 1;
+                ctx.render();
+            })
+        }}>click me</button> {ctx.num || ''}
         <pre><code>{`
 const EventListener = ({ is: Is = 'event-listener', children, name, on, ...props }) => {
     const component = <Is {...props}>{children}</Is>;
@@ -61,11 +63,13 @@ const EventListener = ({ is: Is = 'event-listener', children, name, on, ...props
 
 const Content = Component((props, ctx) => {
     return () => {
-        <EventListener is="button" name="click" on={() => {
-            ctx.num = ctx.num || 0;
-            ctx.num += 1;
-            ctx.render();
-        }}>click me</EventListener> {ctx.num || ''}
+        <button ref={(button) => {
+            button.addEventListener('click', () => {
+                ctx.num = ctx.num || 0;
+                ctx.num += 1;
+                ctx.render();
+            })
+        }}>click me</button> {ctx.num || ''}
     }
 });
 `}</code></pre>
@@ -74,7 +78,7 @@ const Content = Component((props, ctx) => {
 
 const StyleScoped = () => {
     return <>
-        <p>组件样式默认是 scoped 的, 因为组件的根节点被设置成了 <a href="https://developer.mozilla.org/zh-CN/docs/Web/Web_Components/Using_shadow_DOM" target="_blank">Shadow Dom</a></p>
+        <p>Component style scoped default, because root of the component is <a href="https://developer.mozilla.org/zh-CN/docs/Web/Web_Components/Using_shadow_DOM" target="_blank">Shadow Dom</a></p>
         <pre><code>{`
 const Content = Component((props, ctx) => {
     return () => {
@@ -96,7 +100,7 @@ document.body.append(<><Content /><div>I'm not blue.</div></>);
 
 const SimpleRouter = () => {
     return <>
-        <h3>一个简单的路由</h3>
+        <h3>simple router</h3>
         <pre><code>{`
 const Page1 = () => <div>Page 1</div>;
 const Page2 = () => <div>Page 2</div>;
@@ -138,18 +142,18 @@ const inputConst = <input value="input something"></input>;
 const StaticNode = Component((_, ctx) => () => {
     return <>
         <StylePre></StylePre>
-        <h3>静态节点</h3>
+        <h3>staticize node</h3>
         <style>{`
 .img > img {
     width: 100px;
 }
 
 `}</style>
-        <p><EventListener is="button" name="click" on={() => {
-            ctx.num = ctx.num || 0;
-            ctx.num += 1;
-            ctx.render();
-        }}>点我</EventListener> 下面的节点 (img / input) 被重新加载了, 因为 Content 组件的重新渲染</p>
+        <p><button ref={(button) => {
+            button.addEventListener('click', () => {
+                ctx.render();
+            })
+        }}>click me</button> and next nodes (img / input) are reload because of Content rerender</p>
         <p class="img"><img src="https://img.souche.com/684fcf0f15a4508f613ea2ecddc5e7de.jpg"></img></p>
         <p><input value="input something"></input></p>
         <pre><code>{`
@@ -157,16 +161,18 @@ const StaticNode = Component((_, ctx) => () => {
 const Content = Component(() => {
     return () => {
         return <>
-            <EventListener is="button" name="click" on={() => {
-                ctx.render();
-            }}>点我</EventListener> 下面的节点 (img / input) 被重新加载了, 因为 Content 组件的重新渲染
+            <button ref={(button) => {
+                button.addEventListener('click', () => {
+                    ctx.render();
+                })
+            }}>click me</button> and next img are reload because of Content rerender
             <img src="https://img.souche.com/684fcf0f15a4508f613ea2ecddc5e7de.jpg"></img>
             <input value="input something"></input>
         </>
     }
 });
 `}</code></pre>
-        <p>你应该使用全局常量来静态化节点修复这个问题.</p>
+        <p>You should staticize node used global const for fixed.</p>
         <p class="img">{imgConst}</p>
         <p>{inputConst}</p>
         <pre><code>{`
@@ -183,7 +189,7 @@ const Content = Component(() => {
     }
 });
 `}</code></pre>
-        <p>但是全局常量不能使用组件的 props. 可以使用一个高阶函数输出组件. </p>
+        <p>But global const can't use props. Use higher-order function output a Component. </p>
         <p><Input1 value={ctx.input1} oninput={(e) => {
             ctx.input1 = e.target.value;
             ctx.render();
@@ -230,7 +236,7 @@ const Content = Component(() => {
     return () => {
         return <>
             <StylePre></StylePre>
-            <a href="#/cn">回到首页</a>
+            <a href="#/">back Home</a>
             <h1>@vanilla-jsx/component</h1>
             <DefineComponent></DefineComponent>
             <SetState></SetState>

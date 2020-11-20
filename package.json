@@ -2,11 +2,9 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "serve:jsx-runtime:example": "cd packages/jsx-runtime/examples && webpack serve",
-    "serve:component:example": "cd packages/component/examples && webpack serve",
-    "serve": "cd packages/website && webpack serve",
-    "build:website": "cd packages/website && webpack",
-    "deploy:website": "npm run build:website && gh-pages -d ./packages/website"
+    "serve": "cd examples/website && webpack serve",
+    "build:website": "cd examples/website && webpack",
+    "deploy:website": "npm run build:website && gh-pages -d ./examples/website"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.1",
