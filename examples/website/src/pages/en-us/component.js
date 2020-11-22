@@ -236,7 +236,6 @@ const Content = Component(() => {
     return () => {
         return <>
             <StylePre></StylePre>
-            <a href="#/">back Home</a>
             <h1>@vanilla-jsx/component</h1>
             <DefineComponent></DefineComponent>
             <SetState></SetState>

@@ -1,37 +1,23 @@
 import "regenerator-runtime/runtime";
 import Component from "@vanilla-jsx/component";
 
+import routes from './pages/routes';
+
+import SourceCode from './components/SourceCode';
+
 const Root = Component((_, ctx) => {
     window.addEventListener("hashchange", () => ctx.render());
 
     return async () => {
-        if (location.hash === "#/zh-cn/web-components") {
-            const { default: Page } = await import("./zh-cn/web-components.js");
-            return <Page></Page>;
-        } else if (location.hash === "#/zh-cn/canvas") {
-            const { default: Page } = await import("./zh-cn/canvas");
-            return <Page></Page>;
+        for (let index = 0; index < routes.length; index++) {
+            const route = routes[index];
+
+            if (route.path === location.hash.slice(1)) {
+                const { default: Page } = await route.component();
+                return <Page></Page>;
+            }
         }
-        if (location.hash === "#/zh-cn/jsx") {
-            const { default: Page } = await import("./zh-cn/jsx");
-            return <Page></Page>;
-        }
-        if (location.hash === "#/zh-cn/component") {
-            const { default: Page } = await import("./zh-cn/component");
-            return <Page></Page>;
-        } else if (location.hash === "#/zh-cn/") {
-            const { default: Page } = await import("./zh-cn/jsx-runtime");
-            return <Page></Page>;
-        } else if (location.hash === "#/web-components") {
-            const { default: Page } = await import("./web-components.js");
-            return <Page></Page>;
-        } else if (location.hash === "#/component") {
-            const { default: Page } = await import("./component");
-            return <Page></Page>;
-        } else {
-            const { default: Page } = await import("./jsx-runtime");
-            return <Page></Page>;
-        }
+        location.replace('#/');
     };
 });
 
@@ -43,7 +29,7 @@ document.body.append(
                     Translations
                     <ul>
                         <li>
-                            <a href="#/" title=" English" class="active">
+                            <a href="#/" title=" English">
                                 <img
                                     class="emoji"
                                     src="https://github.githubassets.com/images/icons/emoji/uk.png"
@@ -70,7 +56,7 @@ document.body.append(
             <h1 class="app-name">
                 <a class="app-name-link" href="#/">
                     Vanilla-jsx
-        </a>
+                </a>
             </h1>
             <div class="sidebar-nav">
                 <ul>
@@ -90,6 +76,9 @@ document.body.append(
         </aside>
         <div class="content">
             <div class="markdown-section">
+                <SourceCode code={`
+                    const a = <div>asdf</div>
+                `} />
                 <Root />
             </div>
         </div>
