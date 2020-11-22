@@ -1,0 +1,45 @@
+import SourceCode from '../../components/SourceCode.js';
+
+# 小写标签表示 HTML Tag
+
+> 可以使用属性, 样式, Class
+
+<SourceCode code={`const content = <div style="color: red">This is content.</div>;
+document.body.append(content);`}></SourceCode>
+
+## 属性可以使用运算值
+
+<SourceCode code={`const color = 'orange';
+const content = <div style={ 'color:' + color }>This is content.</div>;
+document.body.append(content);`}></SourceCode>
+
+## 嵌套
+
+> 就像真正的 HTML 一样
+
+<SourceCode code={`const content = <div>
+    <h1>Heading</h1>
+    <p>paragraph <strong>strong</strong></p>
+</div>;
+document.body.append(content);`}></SourceCode>
+
+## Fragment
+
+> 作为根节点包裹多个节点
+
+<SourceCode code={`const content = <>
+    <style>{${'`'}.content { color: yellow; background: green; }${'`'}}</style>
+    <div class="content">This is content.</div>
+</>;
+document.body.append(content);`}></SourceCode>
+
+## ref
+
+> 作为一个特殊属性, 接收一个函数, 回调当前的 dom
+
+<SourceCode code={`const content = <button ref={(e) => {
+    e.addEventListener('click', () => {
+        e.innerText = 'clicked';
+    });
+}}>click me</button>;
+document.body.append(content);`}></SourceCode>

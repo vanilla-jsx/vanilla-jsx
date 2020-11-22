@@ -1,0 +1,64 @@
+import SourceCode from '../../components/SourceCode.js';
+
+# Kebabcase is WebComponents
+
+> __[WebComponents](https://developer.mozilla.org/zh-CN/docs/Web/Web_Components)__ = [CustomElements](https://developer.mozilla.org/zh-CN/docs/Web/Web_Components/Using_custom_elements) + [ShadowDom](https://developer.mozilla.org/zh-CN/docs/Web/Web_Components/Using_shadow_DOM) + ~~Template~~ __Vanilla-jsx__
+
+<SourceCode code={`class CustomComponent extends HTMLElement {
+    constructor() {
+        super();
+        const shadow = this.attachShadow({ mode: 'open' });
+        shadow.append(<div>
+            <div>This is template content.</div>
+            <slot />
+        </div>);
+    }
+}
+customElements.define('custom-component', CustomComponent);
+document.body.append(<custom-component>This is slotted content.</custom-component>);`}></SourceCode>
+
+## with Style
+
+> scoped, fixed global pollution
+
+<SourceCode code={`class CustomComponent extends HTMLElement {
+    constructor() {
+        super();
+        const shadow = this.attachShadow({ mode: 'open' });
+        shadow.append(<>
+            <style>{${'`'}div { color: red; }${'`'}}</style>
+            <div>
+                <div>This is red template content.</div>
+                <slot />
+            </div>
+        </>);
+    }
+}
+customElements.define('custom-component', CustomComponent);
+document.body.append(<>
+    <custom-component>This is red slotted content.</custom-component>
+    <div>This is not red.</div>
+</>);`}></SourceCode>
+
+## with Linked Style
+
+> still scoped.
+
+<SourceCode code={`class CustomComponent extends HTMLElement {
+    constructor() {
+        super();
+        const shadow = this.attachShadow({ mode: 'open' });
+        shadow.append(<>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify/themes/vue.css" />
+            <div>
+                <div>This is styled template content.</div>
+                <slot />
+            </div>
+        </>);
+    }
+}
+customElements.define('custom-component', CustomComponent);
+document.body.append(<>
+    <custom-component>This is styled slotted content.</custom-component>
+    <div>This is not styled.</div>
+</>);`}></SourceCode>

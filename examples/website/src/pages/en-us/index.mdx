@@ -1,0 +1,36 @@
+import SourceCode from '../../components/SourceCode.js';
+
+# vanilla-jsx
+
+> Vanilla jsx without runtime.
+>
+> HTML Tag return DOM in js, No virtual DOM.
+
+<SourceCode code={`const content = <div>This is content.</div>;
+document.body.append(content);`}></SourceCode>
+
+## install and config
+
+```bash
+npm i @vanilla-jsx/jsx-runtime
+```
+
+and edit `babel.config.js` or `.babelrc` or other babel config:
+
+```js
+...
+    presets: [
+        ...
+        [
+            '@babel/preset-react', {
+                runtime: 'automatic',
+                importSource: '@vanilla-jsx'
+            }
+        ]
+    ]
+...
+```
+
+then, coding js with jsx.
+
+[simple source](https://github.com/vanilla-jsx/vanilla-jsx/tree/main/examples/simple)

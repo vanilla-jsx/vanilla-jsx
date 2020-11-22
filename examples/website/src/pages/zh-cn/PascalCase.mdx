@@ -1,0 +1,56 @@
+import SourceCode from '../../components/SourceCode.js';
+
+# 大驼峰表示 FunctionExec
+
+> 定义一个没有状态的组件, 更快, 更低成本.
+
+<SourceCode code={`const CustomComponent = () => <div>
+    <h1>Heading</h1>
+    <p>paragraph <strong>strong</strong></p>
+</div>;
+document.body.append(<CustomComponent />);`}></SourceCode>
+
+## with Props
+
+> 作为第一个参数
+
+<SourceCode code={`const CustomComponent = ({ heading, strong }) => <div>
+    <h1>{ heading }</h1>
+    <p>paragraph <strong>{strong}</strong></p>
+</div>;
+document.body.append(<CustomComponent heading="prop heading" strong={'prop strong'} />);`}></SourceCode>
+
+## with children
+
+<SourceCode code={`const CustomComponent = ({ heading, children }) => <div>
+    <h1>{ heading }</h1>
+    <p>paragraph {children}</p>
+</div>;
+document.body.append(<CustomComponent heading="prop heading">
+    <strong>children strong</strong>
+</CustomComponent>);`}></SourceCode>
+
+## customRef
+
+<SourceCode code={`const CustomComponent = ({ heading, children, ref }) => {
+    ref({
+        doSomeThing() {
+            alert('done');
+        }
+    });
+    return <div>
+        <h1>{ heading }</h1>
+        <p>paragraph {children}</p>
+    </div>
+};
+const ContentComponent = () => {
+    const refs = {};
+    return <CustomComponent ref={(e) => refs.xxx = e} heading="prop heading">
+        <button ref={(e) => {
+            e.addEventListener('click', () => {
+                refs.xxx.doSomeThing();
+            });
+        }}>click me</button>
+    </CustomComponent>
+}
+document.body.append(<ContentComponent />);`}></SourceCode>

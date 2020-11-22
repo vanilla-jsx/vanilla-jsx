@@ -1,0 +1,36 @@
+import SourceCode from '../../components/SourceCode.js';
+
+# vanilla-jsx
+
+> 纯粹的 jsx 无需运行时.
+>
+> HTML Tag 直接返回 DOM 在 js 中, 不需要虚拟 DOM.
+
+<SourceCode code={`const content = <div>This is content.</div>;
+document.body.append(content);`}></SourceCode>
+
+## 安装并配置
+
+```bash
+npm i @vanilla-jsx/jsx-runtime
+```
+
+编辑 `babel.config.js` 或 `.babelrc` 或其他的 babel 配置:
+
+```js
+...
+    presets: [
+        ...
+        [
+            '@babel/preset-react', {
+                runtime: 'automatic',
+                importSource: '@vanilla-jsx'
+            }
+        ]
+    ]
+...
+```
+
+然后, 在 js 中使用 jsx.
+
+[简单项目源码](https://github.com/vanilla-jsx/vanilla-jsx/tree/main/examples/simple)

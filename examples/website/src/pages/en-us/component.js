@@ -9,14 +9,6 @@ pre {
 }
 `}</style>;
 
-const EventListener = ({ is: Is = 'event-listener', children, name, on, ...props }) => {
-    const component = <Is {...props}>{children}</Is>;
-
-    component.addEventListener(name, on);
-
-    return component;
-}
-
 const DefineComponent = () => {
     return <>
         <p>define a component with state.</p>
@@ -53,13 +45,6 @@ const SetState = Component((_, ctx) => () => {
             })
         }}>click me</button> {ctx.num || ''}
         <pre><code>{`
-const EventListener = ({ is: Is = 'event-listener', children, name, on, ...props }) => {
-    const component = <Is {...props}>{children}</Is>;
-
-    component.addEventListener(name, on);
-
-    return component;
-}
 
 const Content = Component((props, ctx) => {
     return () => {

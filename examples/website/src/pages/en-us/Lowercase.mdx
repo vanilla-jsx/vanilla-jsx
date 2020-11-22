@@ -1,0 +1,45 @@
+import SourceCode from '../../components/SourceCode.js';
+
+# Lowercase is HTML Tag
+
+> with Attributes, Styles, Class
+
+<SourceCode code={`const content = <div style="color: red">This is content.</div>;
+document.body.append(content);`}></SourceCode>
+
+## Attributes can be computed
+
+<SourceCode code={`const color = 'orange';
+const content = <div style={ 'color:' + color }>This is content.</div>;
+document.body.append(content);`}></SourceCode>
+
+## nested
+
+> just like the real HTML
+
+<SourceCode code={`const content = <div>
+    <h1>Heading</h1>
+    <p>paragraph <strong>strong</strong></p>
+</div>;
+document.body.append(content);`}></SourceCode>
+
+## Fragment
+
+> as the root with Multiple nodes
+
+<SourceCode code={`const content = <>
+    <style>{${'`'}.content { color: yellow; background: green; }${'`'}}</style>
+    <div class="content">This is content.</div>
+</>;
+document.body.append(content);`}></SourceCode>
+
+## ref
+
+> as the special attribute, receives a function, callback the dom
+
+<SourceCode code={`const content = <button ref={(e) => {
+    e.addEventListener('click', () => {
+        e.innerText = 'clicked';
+    });
+}}>click me</button>;
+document.body.append(content);`}></SourceCode>
