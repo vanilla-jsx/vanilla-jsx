@@ -16,6 +16,10 @@ const routes = [
         component: () => import('./PascalCase.mdx')
     },
     {
+        path: '/mdx',
+        component: () => import('./mdx.mdx')
+    },
+    {
         path: '/component',
         component: () => import('./component')
     },
@@ -58,17 +62,14 @@ export default routes.map((ele) => {
                                         </li> */}
                                     </ul>
                                 </li>
-                                {/* <li>
-                                    <p>Getting started</p>
+                                <li>
+                                    <p>Advanced</p>
                                     <ul>
                                         <li>
-                                            <a href={`#${basePath}/`}>Quick start</a>
-                                        </li>
-                                        <li>
-                                            <a href={`#${basePath}/component`}>@vanilla-jsx/component</a>
+                                            <a href={`#${basePath}/mdx`}>with Markdown - @vanilla-jsx/mdx-loader</a>
                                         </li>
                                     </ul>
-                                </li> */}
+                                </li>
                                 <li>
                                     <a href="https://github.com/vanilla-jsx/vanilla-jsx" target="_blank">Github Repo</a>
                                 </li>

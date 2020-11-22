@@ -1,0 +1,30 @@
+# 在 Markdown 中使用 - @vanilla-jsx/mdx-loader
+
+> 就像本站点一样. [去看看源码](https://github.com/vanilla-jsx/vanilla-jsx/tree/main/examples/website)
+
+## 安装并配置
+
+```bash
+npm i @vanilla-jsx/mdx-loader
+```
+
+编辑 webpack 配置:
+
+```js
+...
+    module: {
+        rules: [
+            ...
+            {
+                test: /.mdx?$/,
+                use: [
+                    'babel-loader',
+                    '@vanilla-jsx/mdx-loader'
+                ]
+            }
+        ]
+    },
+...
+```
+
+然后, 在 Markdown 中使用 jsx.

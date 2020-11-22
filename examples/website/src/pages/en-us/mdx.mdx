@@ -1,0 +1,30 @@
+# with Markdown - @vanilla-jsx/mdx-loader
+
+> just link this website. [see source](https://github.com/vanilla-jsx/vanilla-jsx/tree/main/examples/website)
+
+## install and config
+
+```bash
+npm i @vanilla-jsx/mdx-loader
+```
+
+and edit webpack config:
+
+```js
+...
+    module: {
+        rules: [
+            ...
+            {
+                test: /.mdx?$/,
+                use: [
+                    'babel-loader',
+                    '@vanilla-jsx/mdx-loader'
+                ]
+            }
+        ]
+    },
+...
+```
+
+then, coding jsx at Markdown.

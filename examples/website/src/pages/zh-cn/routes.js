@@ -16,6 +16,10 @@ const routes = [
         component: () => import('./PascalCase.mdx')
     },
     {
+        path: '/mdx',
+        component: () => import('./mdx.mdx')
+    },
+    {
         path: '/component',
         component: () => import('./component')
     },
@@ -58,22 +62,19 @@ export default routes.map((ele) => {
                                         </li> */}
                                     </ul>
                                 </li>
-                                {/* <li>
-                                    <p>Getting started</p>
+                                <li>
+                                    <p>进阶</p>
                                     <ul>
                                         <li>
-                                            <a href={`#${basePath}/`}>Quick start</a>
-                                        </li>
-                                        <li>
-                                            <a href={`#${basePath}/component`}>@vanilla-jsx/component</a>
+                                            <a href={`#${basePath}/mdx`}>在 Markdown 中使用 - @vanilla-jsx/mdx-loader</a>
                                         </li>
                                     </ul>
-                                </li> */}
-                                <li>
-                                    <a href="https://github.com/vanilla-jsx/vanilla-jsx" target="_blank">Github Repo</a>
                                 </li>
                                 <li>
-                                    <a href="https://github.com/vanilla-jsx/vanilla-jsx/tree/main/examples/website" target="_blank">Website Source</a>
+                                    <a href="https://github.com/vanilla-jsx/vanilla-jsx" target="_blank">Github 仓库</a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/vanilla-jsx/vanilla-jsx/tree/main/examples/website" target="_blank">本站点源码</a>
                                 </li>
                             </ul>
                         </div>
