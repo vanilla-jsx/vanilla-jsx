@@ -15,6 +15,7 @@
   },
   "homepage": "https://github.com/vanilla-jsx/vanilla-jsx#readme",
   "files": [
-    "index.js"
+    "index.js",
+    "dist"
   ]
 }
