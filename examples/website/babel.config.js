@@ -4,6 +4,6 @@ module.exports = {
             runtime: 'automatic',
             importSource: '@vanilla-jsx'
         } ],
-        [ '@babel/preset-env' ]
+        ...(process.env.NODE_ENV !== 'development' ? [[ '@babel/preset-env' ]] : [])
     ]
 }

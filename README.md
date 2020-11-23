@@ -1,8 +1,15 @@
+[https://vanilla-jsx.github.io/vanilla-jsx/](https://vanilla-jsx.github.io/vanilla-jsx/)
+
 # vanilla-jsx
 
-vanilla jsx without Vue.js or React.js
+> Vanilla jsx without runtime.
+>
+> HTML Tag return DOM in js, No virtual DOM.
 
-[https://vanilla-jsx.github.io/vanilla-jsx/](https://vanilla-jsx.github.io/vanilla-jsx/)
+```
+const content = <div>This is content.</div>;
+document.body.append(content);
+```
 
 ## install and config
 
@@ -28,82 +35,16 @@ and edit `babel.config.js` or `.babelrc` or other babel config:
 
 then, coding js with jsx.
 
-## example
+[simple source](https://github.com/vanilla-jsx/vanilla-jsx/tree/main/examples/simple)
 
-[Full Project](https://github.com/vanilla-jsx/vanilla-jsx/tree/main/packages/website)
+## docs
 
-Run yourself: clone this repo, and `npm run serve`
+- Getting started
+    - Lowercase is HTML Tag - [demo](https://vanilla-jsx.github.io/vanilla-jsx/#/Lowercase)
+    - Kebabcase is WebComponents - [demo](https://vanilla-jsx.github.io/vanilla-jsx/#/Kebabcase)
+    - PascalCase is FunctionExec - [demo](https://vanilla-jsx.github.io/vanilla-jsx/#/PascalCase)
+- Advanced
+    - with Markdown - @vanilla-jsx/mdx-loader - [demo](https://vanilla-jsx.github.io/vanilla-jsx/#/mdx)
+    - with Reactive - @vanilla-jsx/observer - [demo](https://vanilla-jsx.github.io/vanilla-jsx/#/observer)
 
-```js
-function ComponnetWithEvent() {
-    const button = <button style="margin-top: 30px">click me</button>;
-
-    button.addEventListener('click', (e) => {
-        button.replaceChildren(<ComponentWithStyle>surpport event listener, then do something, eg: replace children </ComponentWithStyle>)
-    });
-
-    return <>{button}</>;
-}
-
-function ComponentWithStyle({ children }) {
-    const id = `id_${new Date().getTime()}_${parseInt(Math.random() * 1000)}`
-    return <>
-        <div class={id}>{children}</div>
-        <style type="text/css">{`
-            .${id} {
-                color: blue;
-            }
-        `}</style>
-    </>;
-}
-
-function Content() {
-    return <>
-        <h1>vanilla-jsx</h1>
-        <p>vanilla jsx without Vue.js or React.js</p>
-        <p style="color: red">with attr, eg: style</p>
-        <p ref={(ele) => {
-            console.log(ele);
-        }}>with ref, for get this dom.</p>
-        <ComponentWithStyle>Component with style, support scoped use attr</ComponentWithStyle>
-        <ComponnetWithEvent></ComponnetWithEvent>
-    </>;
-}
-
-document.body.append(<Content />);
-```
-
-## use with WebComponents
-
-If you want Component with state, you can use WebComponents.
-
-WebComponents = CustomElements + ShadowDOM + TemplatesAndSlots. 详见 [MDN](https://developer.mozilla.org/zh-CN/docs/Web/Web_Components).
-
-Use JSX instead of `getElementById` for getting templates at CustomElements.
-
-Kebab case Tag is built to HTML Tag.
-
-You can define CustomElements by `customElements.define('kebab-case-name', constructor)`.
-
-Then `<kebab-case-name />`.
-
-For example:
-
-[demo](https://vanilla-jsx.github.io/vanilla-jsx/#/web-components)
-
-```js
-class Bolt extends HTMLElement {
-    constructor() {
-        super();
-
-        const shadow = this.attachShadow({ mode: 'open' });
-        shadow.append(<div><slot /></div>);
-    }
-}
-
-customElements.define('bolt-a', Bolt);
-
-function Content() {
-    return <bolt-a>Here is used for slot</bolt-a>
-}
-```
+and more: [https://vanilla-jsx.github.io/vanilla-jsx/](https://vanilla-jsx.github.io/vanilla-jsx/)
