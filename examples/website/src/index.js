@@ -1,5 +1,4 @@
 import "regenerator-runtime/runtime";
-import Component from "@vanilla-jsx/component";
 
 import routes from './pages/routes';
 

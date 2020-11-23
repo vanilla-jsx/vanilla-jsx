@@ -13,6 +13,7 @@
     "@vanilla-jsx/component": "^1.2.2",
     "@vanilla-jsx/jsx-runtime": "^1.2.3",
     "@vanilla-jsx/mdx-loader": "^1.2.2",
+    "@vanilla-jsx/observer": "^1.2.2",
     "prismjs": "^1.22.0",
     "regenerator-runtime": "^0.13.7"
   }

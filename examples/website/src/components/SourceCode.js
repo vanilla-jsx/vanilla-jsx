@@ -29,4 +29,11 @@ function SourceCode({ code }) {
     </>
 }
 
+<SourceCode code={`
+    const p = {
+        a: b
+    }
+    document.body.append(<div {...p}>dsaf</div>)
+`}></SourceCode>
+
 export default SourceCode;

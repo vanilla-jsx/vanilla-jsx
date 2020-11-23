@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "build:jsx-runtime": "cd packages/jsx-runtime && webpack",
+    "build:observer": "cd packages/observer && webpack",
     "serve": "cd examples/website && webpack serve",
     "build:website": "cd examples/website && webpack",
     "deploy:website": "npm run build:website && gh-pages -d ./examples/website"
