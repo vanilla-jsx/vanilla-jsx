@@ -65,9 +65,6 @@ export default routes.map((ele) => {
                                         <li>
                                             <a href={`#${basePath}/PascalCase`}>PascalCase is FunctionExec</a>
                                         </li>
-                                        {/* <li>
-                                            <a href={`#${basePath}/component`}>@vanilla-jsx/component</a>
-                                        </li> */}
                                     </ul>
                                 </li>
                                 <li>

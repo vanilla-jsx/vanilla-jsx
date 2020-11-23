@@ -29,7 +29,10 @@ export const createRxElement = (Tag) => {
 
             Object.keys(props).forEach((key) => {
                 observe(() => {
-                    element.setAttribute(key, props[key])
+                    element.setAttribute(key, props[key]);
+                    if (element[key] !== props[key]) {
+                        element[key] = props[key];
+                    }
                 });
             });
 
