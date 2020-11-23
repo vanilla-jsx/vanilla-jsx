@@ -20,6 +20,10 @@ const routes = [
         component: () => import('./mdx.mdx')
     },
     {
+        path: '/observer',
+        component: () => import('./observer.mdx')
+    },
+    {
         path: '/component',
         component: () => import('./component')
     },
@@ -67,6 +71,9 @@ export default routes.map((ele) => {
                                     <ul>
                                         <li>
                                             <a href={`#${basePath}/mdx`}>在 Markdown 中使用 - @vanilla-jsx/mdx-loader</a>
+                                        </li>
+                                        <li>
+                                            <a href={`#${basePath}/observer`}>响应式 - @vanilla-jsx/observer</a>
                                         </li>
                                     </ul>
                                 </li>
