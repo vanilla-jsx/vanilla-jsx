@@ -1,6 +1,6 @@
 {
   "name": "@vanilla-jsx/website",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "private": "true",
   "description": "",
   "main": "babel.config.js",
@@ -13,7 +13,7 @@
     "@vanilla-jsx/component": "^1.2.2",
     "@vanilla-jsx/jsx-runtime": "^1.2.3",
     "@vanilla-jsx/mdx-loader": "^1.2.2",
-    "@vanilla-jsx/observer": "^1.3.0",
+    "@vanilla-jsx/observer": "^1.3.1",
     "prismjs": "^1.22.0",
     "regenerator-runtime": "^0.13.7"
   }
