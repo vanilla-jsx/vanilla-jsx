@@ -6,12 +6,20 @@ export default (code) =>  `
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://unpkg.com/@vanilla-jsx/jsx-runtime@1.2.3/dist/main.js"></script>
+    <script src="https://unpkg.com/@vanilla-jsx/observer@1.2.4/dist/main.js"></script>
     <script>
-        window.require = function() {
-            return {
-                jsxs: jsxs,
-                jsx: jsx,
-                Fragment: Fragment
+        window.require = function(path) {
+            if (path === '@vanilla-jsx/jsx-runtime') {
+                return {
+                    jsxs: jsxs,
+                    jsx: jsx,
+                    Fragment: Fragment
+                }
+            } else if (path === '@vanilla-jsx/observer') {
+                return {
+                    rx: rx,
+                    createRxElement: createRxElement
+                }
             }
         }
     </script>

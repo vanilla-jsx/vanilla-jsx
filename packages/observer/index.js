@@ -20,7 +20,7 @@ export const rx = (value) => {
     }
 }
 
-export const createRxDom = (Tag) => {
+export const createRxElement = (Tag) => {
     return ({ ref, children, ...props }) => {
         if (typeof Tag === 'string') {
             const element = document.createElement(Tag);
