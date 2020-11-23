@@ -3,8 +3,12 @@ exports.jsxs = exports.jsx = (tag, { ref, children, ...props } = {}) => {
         const element = document.createElement(tag);
 
         Object.keys(props).forEach((key) => {
-            if (props[key]) {
-                element.setAttribute(key, props[key])
+            if (!props[key]) {
+
+            } else if (typeof props[key] === 'function') {
+                element[key] = props[key];
+            } else {
+                element.setAttribute(key, props[key]);
             }
         });
 

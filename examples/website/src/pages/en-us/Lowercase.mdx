@@ -2,9 +2,9 @@ import SourceCode from '../../components/SourceCode.js';
 
 # Lowercase is HTML Tag
 
-> with Attributes, Styles, Class
+> with Attributes, Styles, Class, Event
 
-<SourceCode code={`const content = <div style="color: red">This is content.</div>;
+<SourceCode code={`const content = <div style="color: red" onclick={() => console.log('1')}>This is content.</div>;
 document.body.append(content);`}></SourceCode>
 
 ## Attributes can be computed

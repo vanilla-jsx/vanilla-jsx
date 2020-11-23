@@ -2,9 +2,9 @@ import SourceCode from '../../components/SourceCode.js';
 
 # 小写标签表示 HTML Tag
 
-> 可以使用属性, 样式, Class
+> 可以使用属性, 样式, 类名, 事件
 
-<SourceCode code={`const content = <div style="color: red">This is content.</div>;
+<SourceCode code={`const content = <div style="color: red" onclick={() => console.log('1')}>This is content.</div>;
 document.body.append(content);`}></SourceCode>
 
 ## 属性可以使用运算值

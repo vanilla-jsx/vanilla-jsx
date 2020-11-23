@@ -29,9 +29,18 @@ export const createRxElement = (Tag) => {
 
             Object.keys(props).forEach((key) => {
                 observe(() => {
-                    element.setAttribute(key, props[key]);
-                    if (element[key] !== props[key]) {
+                    if (!props[key]) {
+                        element.removeAttribute(key);
+                        if (element[key]) {
+                            element[key] = null;
+                        }
+                    } else if (typeof props[key] === 'function') {
                         element[key] = props[key];
+                    } else {
+                        element.setAttribute(key, props[key]);
+                        if (element[key] !== props[key]) {
+                            element[key] = props[key];
+                        }
                     }
                 });
             });
