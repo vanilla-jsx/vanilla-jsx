@@ -15,7 +15,8 @@
   },
   "homepage": "https://github.com/vanilla-jsx/vanilla-jsx#readme",
   "files": [
-    "index.js"
+    "index.js",
+    "dist"
   ],
   "dependencies": {
     "@nx-js/observer-util": "^4.2.2",
