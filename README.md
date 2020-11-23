@@ -1,5 +1,3 @@
-[https://vanilla-jsx.github.io/vanilla-jsx/](https://vanilla-jsx.github.io/vanilla-jsx/)
-
 # vanilla-jsx
 
 > Vanilla jsx without runtime.
@@ -10,6 +8,8 @@
 const content = <div>This is content.</div>;
 document.body.append(content);
 ```
+
+[Run](https://vanilla-jsx.github.io/vanilla-jsx/)
 
 ## install and config
 
@@ -37,14 +37,14 @@ then, coding js with jsx.
 
 [simple source](https://github.com/vanilla-jsx/vanilla-jsx/tree/main/examples/simple)
 
-## docs
+## Documentation
 
 - Getting started
-    - Lowercase is HTML Tag - [demo](https://vanilla-jsx.github.io/vanilla-jsx/#/Lowercase)
-    - Kebabcase is WebComponents - [demo](https://vanilla-jsx.github.io/vanilla-jsx/#/Kebabcase)
-    - PascalCase is FunctionExec - [demo](https://vanilla-jsx.github.io/vanilla-jsx/#/PascalCase)
+    - [Lowercase is HTML Tag](https://vanilla-jsx.github.io/vanilla-jsx/#/Lowercase)
+    - [Kebabcase is WebComponents](https://vanilla-jsx.github.io/vanilla-jsx/#/Kebabcase)
+    - [PascalCase is FunctionExec](https://vanilla-jsx.github.io/vanilla-jsx/#/PascalCase)
 - Advanced
-    - with Markdown - @vanilla-jsx/mdx-loader - [demo](https://vanilla-jsx.github.io/vanilla-jsx/#/mdx)
-    - with Reactive - @vanilla-jsx/observer - [demo](https://vanilla-jsx.github.io/vanilla-jsx/#/observer)
+    - [with Markdown - @vanilla-jsx/mdx-loader](https://vanilla-jsx.github.io/vanilla-jsx/#/mdx)
+    - [with Reactive - @vanilla-jsx/observer](https://vanilla-jsx.github.io/vanilla-jsx/#/observer)
 
 and more: [https://vanilla-jsx.github.io/vanilla-jsx/](https://vanilla-jsx.github.io/vanilla-jsx/)

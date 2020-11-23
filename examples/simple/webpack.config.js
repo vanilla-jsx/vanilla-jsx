@@ -1,11 +1,4 @@
-const path = require('path');
-
 module.exports = {
-    resolve: {
-        alias: {
-            '@vanilla-jsx/jsx-runtime': path.resolve(__dirname, '../index.js')
-        }
-    },
     module: {
         rules: [
             {
