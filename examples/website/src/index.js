@@ -41,7 +41,6 @@ const Root = () => {
     const refs = {};
 
     const renderPage = async () => {
-        console.log(routes);
         for (let index = 0; index < routes.length; index++) {
             const route = routes[index];
 
