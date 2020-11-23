@@ -43,8 +43,9 @@ then, coding js with jsx.
     - [Lowercase is HTML Tag](https://vanilla-jsx.github.io/vanilla-jsx/#/Lowercase)
     - [Kebabcase is WebComponents](https://vanilla-jsx.github.io/vanilla-jsx/#/Kebabcase)
     - [PascalCase is FunctionExec](https://vanilla-jsx.github.io/vanilla-jsx/#/PascalCase)
-- Advanced
-    - [with Markdown - @vanilla-jsx/mdx-loader](https://vanilla-jsx.github.io/vanilla-jsx/#/mdx)
     - [with Reactive - @vanilla-jsx/observer](https://vanilla-jsx.github.io/vanilla-jsx/#/observer)
+- Advanced
+    - [with jQuery, but not selector](https://vanilla-jsx.github.io/vanilla-jsx/#/jquery)
+    - [with Markdown - @vanilla-jsx/mdx-loader](https://vanilla-jsx.github.io/vanilla-jsx/#/mdx)
 
 and more: [https://vanilla-jsx.github.io/vanilla-jsx/](https://vanilla-jsx.github.io/vanilla-jsx/)
