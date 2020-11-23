@@ -65,19 +65,19 @@ export default routes.map((ele) => {
                                         <li>
                                             <a href={`#${basePath}/PascalCase`}>大驼峰表示 FunctionExec</a>
                                         </li>
+                                        <li>
+                                            <a href={`#${basePath}/observer`}>响应式 - @vanilla-jsx/observer</a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li>
                                     <p>进阶</p>
                                     <ul>
                                         <li>
-                                            <a href={`#${basePath}/mdx`}>在 Markdown 中使用 - @vanilla-jsx/mdx-loader</a>
-                                        </li>
-                                        <li>
-                                            <a href={`#${basePath}/observer`}>响应式 - @vanilla-jsx/observer</a>
-                                        </li>
-                                        <li>
                                             <a href={`#${basePath}/jquery`}>使用 jquery, 但不使用选择器</a>
+                                        </li>
+                                        <li>
+                                            <a href={`#${basePath}/mdx`}>在 Markdown 中使用 - @vanilla-jsx/mdx-loader</a>
                                         </li>
                                     </ul>
                                 </li>

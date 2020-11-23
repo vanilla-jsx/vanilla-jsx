@@ -65,19 +65,19 @@ export default routes.map((ele) => {
                                         <li>
                                             <a href={`#${basePath}/PascalCase`}>PascalCase is FunctionExec</a>
                                         </li>
+                                        <li>
+                                            <a href={`#${basePath}/observer`}>with Reactive - @vanilla-jsx/observer</a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li>
                                     <p>Advanced</p>
                                     <ul>
                                         <li>
-                                            <a href={`#${basePath}/mdx`}>with Markdown - @vanilla-jsx/mdx-loader</a>
-                                        </li>
-                                        <li>
-                                            <a href={`#${basePath}/observer`}>with Reactive - @vanilla-jsx/observer</a>
-                                        </li>
-                                        <li>
                                             <a href={`#${basePath}/jquery`}>with jQuery, but not selector</a>
+                                        </li>
+                                        <li>
+                                            <a href={`#${basePath}/mdx`}>with Markdown - @vanilla-jsx/mdx-loader</a>
                                         </li>
                                     </ul>
                                 </li>
