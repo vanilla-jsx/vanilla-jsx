@@ -11,7 +11,7 @@ export default (code) =>  `
     <script src="/observer/dist/main.js"></script>`;
         } else {
             return `<script src="https://unpkg.com/@vanilla-jsx/jsx-runtime@1.2.3/dist/main.js"></script>
-    <script src="https://unpkg.com/@vanilla-jsx/observer@1.3.0/dist/main.js"></script>`;
+    <script src="https://unpkg.com/@vanilla-jsx/observer@1.3.1/dist/main.js"></script>`;
         }
     })()}
     <script>
