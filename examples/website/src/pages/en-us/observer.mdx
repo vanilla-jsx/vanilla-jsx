@@ -20,7 +20,11 @@ npm i @vanilla-jsx/observer
 
 ## API
 
-### createRxElement(htmlTag: String)
+> extends [@nx-js/observer-util](https://github.com/nx-js/observer-util), export { observable, isObservable, observe, unobserve, raw }
+>
+> and add { createRxElement, rx }
+
+### createRxElement(htmlTag: String): Function
 
 > create a CustomComponent support rx attribute or rx children
 
@@ -40,15 +44,15 @@ const CustomComponent = () => {
 };
 document.body.append(<CustomComponent />);`}></SourceCode>
 
-### rx(value: undefined | null | Number | String)
+### rx(value: undefined | null | Number | String): Observable
 
 > create a rx state used for attribute or children
 
-### rx(value: Object | Array)
+### rx(value: Object | Array): Observable
 
 > create a rx state with Deep JSON
 
-### rx(computed: () => (undefined | null | Number | String))
+### rx(computed: () => (undefined | null | Number | String)): Observable
 
 > as computed return a rx state used for attribute or children
 

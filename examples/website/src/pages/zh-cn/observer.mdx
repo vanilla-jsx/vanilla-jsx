@@ -20,7 +20,11 @@ npm i @vanilla-jsx/observer
 
 ## API
 
-### createRxElement(htmlTag: String)
+> 继承自 [@nx-js/observer-util](https://github.com/nx-js/observer-util), 导出 { observable, isObservable, observe, unobserve, raw }
+>
+> 并添加 { createRxElement, rx }
+
+### createRxElement(htmlTag: String): Function
 
 > 创建一个自定义组件用于支持响应式属性或响应式子元素.
 
@@ -40,15 +44,15 @@ const CustomComponent = () => {
 };
 document.body.append(<CustomComponent />);`}></SourceCode>
 
-### rx(value: undefined | null | Number | String)
+### rx(value: undefined | null | Number | String): Observable
 
 > 创建一个响应式状态用于属性或子元素
 
-### rx(value: Object | Array)
+### rx(value: Object | Array): Observable
 
 > 创建一个响应式状态用于深度 JSON.
 
-### rx(computed: () => (undefined | null | Number | String))
+### rx(computed: () => (undefined | null | Number | String)): Observable
 
 > 作为一个计算值返回一个响应式属性或响应式子元素.
 
