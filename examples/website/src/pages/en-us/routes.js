@@ -20,6 +20,10 @@ const routes = [
         component: () => import('./mdx.mdx')
     },
     {
+        path: '/observer',
+        component: () => import('./observer.mdx')
+    },
+    {
         path: '/component',
         component: () => import('./component')
     },
@@ -67,6 +71,9 @@ export default routes.map((ele) => {
                                     <ul>
                                         <li>
                                             <a href={`#${basePath}/mdx`}>with Markdown - @vanilla-jsx/mdx-loader</a>
+                                        </li>
+                                        <li>
+                                            <a href={`#${basePath}/observer`}>with Reactive - @vanilla-jsx/observer</a>
                                         </li>
                                     </ul>
                                 </li>

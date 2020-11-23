@@ -1,0 +1,69 @@
+import SourceCode from '../../components/SourceCode.js';
+
+# with Reactive - @vanilla-jsx/observer
+
+> just like React / Vue.
+
+<SourceCode code={`import { rx, createRxElement } from '@vanilla-jsx/observer';
+const Div = createRxElement('div');
+const someThing = rx(0);
+setInterval(() => {
+    someThing.value++;
+}, 1000);
+document.body.append(<Div>setInterval: {someThing}</Div>);`}></SourceCode>
+
+## install
+
+```bash
+npm i @vanilla-jsx/observer
+```
+
+## API
+
+### createRxElement(htmlTag: String)
+
+> create a CustomComponent support rx attribute or rx children
+
+<SourceCode code={`import { rx, createRxElement } from '@vanilla-jsx/observer';
+const Button = createRxElement('button');
+const Input = createRxElement('input');
+const CustomComponent = () => {
+    const someThing = rx(0);
+    return <>
+        <Button ref={(ele) => {
+            ele.addEventListener('click', () => {
+                someThing.value++;
+            });
+        }}>click me: {someThing}</Button>
+        <Input value={someThing} />
+    </>;
+};
+document.body.append(<CustomComponent />);`}></SourceCode>
+
+### rx(value: undefined | null | Number | String)
+
+> create a rx state used for attribute or children
+
+### rx(value: Object | Array)
+
+> create a rx state with Deep JSON
+
+### rx(computed: () => (undefined | null | Number | String))
+
+> as computed return a rx state used for attribute or children
+
+<SourceCode code={`import { rx, createRxElement } from '@vanilla-jsx/observer';
+const Button = createRxElement('button');
+const Input = createRxElement('input');
+const CustomComponent = () => {
+    const someThing = rx(0);
+    return <>
+        <Button ref={(ele) => {
+            ele.addEventListener('click', () => {
+                someThing.value++;
+            });
+        }}>click me: {someThing}</Button>
+        <Input value={rx(() => 'computed value:' + someThing)} />
+    </>;
+};
+document.body.append(<CustomComponent />);`}></SourceCode>

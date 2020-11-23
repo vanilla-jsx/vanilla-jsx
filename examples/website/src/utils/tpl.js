@@ -5,8 +5,8 @@ export default (code) =>  `
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://unpkg.com/@vanilla-jsx/jsx-runtime@1.2.3/dist/main.js"></script>
-    <script src="https://unpkg.com/@vanilla-jsx/observer@1.2.4/dist/main.js"></script>
+    <script src="/jsx-runtime/dist/main.js"></script>
+    <script src="/observer/dist/main.js"></script>
     <script>
         window.require = function(path) {
             if (path === '@vanilla-jsx/jsx-runtime') {

@@ -8,7 +8,8 @@ function SourceCode({ code }) {
             [
                 'react',
                 {
-                    runtime: 'automatic'
+                    runtime: 'automatic',
+                    importSource: '@vanilla-jsx'
                 }
             ]
         ]

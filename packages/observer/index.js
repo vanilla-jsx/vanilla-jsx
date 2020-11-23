@@ -6,7 +6,9 @@ export const rx = (value) => {
     } else if (typeof value === 'object') {
         return observable(value);
     } else if (typeof value === 'function') {
-        return rx(value());
+        const wrapper = rx();
+        observe(() => wrapper.value = value());
+        return wrapper;
     } else {
         return observable({
             value,

@@ -18,6 +18,10 @@ module.exports = {
         ]
     },
     devServer: {
-        publicPath: '/dist'
+        publicPath: '/dist',
+        contentBase: [
+            path.join(__dirname),
+            path.join(__dirname, 'node_modules/@vanilla-jsx')
+        ],
     }
 }
