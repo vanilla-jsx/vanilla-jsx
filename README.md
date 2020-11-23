@@ -4,7 +4,7 @@
 >
 > HTML Tag return DOM in js, No virtual DOM.
 
-```
+```js
 const content = <div>This is content.</div>;
 document.body.append(content);
 ```
