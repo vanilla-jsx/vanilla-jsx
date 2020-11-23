@@ -1,7 +1,7 @@
 import Prismjs from 'prismjs'
 import tpl from '../utils/tpl';
 
-function SourceCode({ code }) {
+function SourceCode({ code, dependences }) {
     var output = Babel.transform(code, {
         presets: [
             'env',
@@ -22,19 +22,14 @@ function SourceCode({ code }) {
                 Prismjs.highlightElement(ele);
             }}>{code}</code></pre>
             <div style="flex: 1; background: #fff;">
-                <iframe style="border: none" ref={(e) => {
-                    e.setAttribute('srcdoc', tpl(output))
+                <iframe style="border: none; height: 100%; margin: 0;" ref={(e) => {
+                    e.setAttribute('srcdoc', tpl(output, {
+                        dependences
+                    }))
                 }}></iframe>
             </div>
         </div>
     </>
 }
-
-<SourceCode code={`
-    const p = {
-        a: b
-    }
-    document.body.append(<div {...p}>dsaf</div>)
-`}></SourceCode>
 
 export default SourceCode;

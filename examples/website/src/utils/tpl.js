@@ -1,4 +1,4 @@
-export default (code) =>  `
+export default (code, { dependences = [] } = {}) =>  `
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +14,7 @@ export default (code) =>  `
     <script src="https://unpkg.com/@vanilla-jsx/observer@1.3.1/dist/main.js"></script>`;
         }
     })()}
+    ${dependences.map(ele => `<script src="${ele}"></script>`)}
     <script>
         window.require = function(path) {
             if (path === '@vanilla-jsx/jsx-runtime') {

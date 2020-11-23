@@ -1,0 +1,43 @@
+import SourceCode from '../../components/SourceCode.js';
+
+# with jQuery, but not selector
+
+> $(dom) convert into jQuery Object, Faster, Lower cost.
+
+<SourceCode code={`const $content = $(<div>This is content.</div>);
+$content.appendTo(document.body);`} dependences={[
+    'https://unpkg.com/jquery@3.5.1/dist/jquery.slim.min.js'
+]}></SourceCode>
+
+## Speed Test
+
+<SourceCode code={`document.body.append(<div id="content">This is content.</div>);
+for (let index = 0; index < 6; index++) {
+    const t1 = performance.now();
+    for (let index = 0; index < 10000; index++) {
+        const $content = $(<div>This is content.</div>);
+    }
+    document.body.append(<div>jsx create time: {performance.now() - t1}</div>);
+    const t2 = performance.now();
+    for (let index = 0; index < 10000; index++) {
+        const $content = $('<div>This is content.</div>');
+    }
+    document.body.append(<div>jquery create time: {performance.now() - t2}</div>);
+}`} dependences={[
+    'https://unpkg.com/jquery@3.5.1/dist/jquery.slim.min.js'
+]}></SourceCode>
+
+## nested dom add eventListener
+
+<SourceCode code={`const refs = {};
+const content = <div>
+    <p ref={p => refs.p = p}>This is content.</p>
+    <button ref={(e) => {
+        $(e).on('click', () => {
+            $(refs.p).text('clicked');
+        });
+    }}>click me</button>
+</div>;
+document.body.append(content)`} dependences={[
+    'https://unpkg.com/jquery@3.5.1/dist/jquery.slim.min.js'
+]}></SourceCode>

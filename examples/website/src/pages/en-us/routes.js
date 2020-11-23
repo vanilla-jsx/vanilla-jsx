@@ -24,6 +24,10 @@ const routes = [
         component: () => import('./observer.mdx')
     },
     {
+        path: '/jquery',
+        component: () => import('./jquery.mdx')
+    },
+    {
         path: '/component',
         component: () => import('./component')
     },
@@ -74,6 +78,9 @@ export default routes.map((ele) => {
                                         </li>
                                         <li>
                                             <a href={`#${basePath}/observer`}>with Reactive - @vanilla-jsx/observer</a>
+                                        </li>
+                                        <li>
+                                            <a href={`#${basePath}/jquery`}>with jQuery, but not selector</a>
                                         </li>
                                     </ul>
                                 </li>

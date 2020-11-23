@@ -24,6 +24,10 @@ const routes = [
         component: () => import('./observer.mdx')
     },
     {
+        path: '/jquery',
+        component: () => import('./jquery.mdx')
+    },
+    {
         path: '/component',
         component: () => import('./component')
     },
@@ -74,6 +78,9 @@ export default routes.map((ele) => {
                                         </li>
                                         <li>
                                             <a href={`#${basePath}/observer`}>响应式 - @vanilla-jsx/observer</a>
+                                        </li>
+                                        <li>
+                                            <a href={`#${basePath}/jquery`}>使用 jquery, 但不使用选择器</a>
                                         </li>
                                     </ul>
                                 </li>
