@@ -47,6 +47,7 @@ const Root = () => {
             if (route.path === location.hash.slice(1)) {
                 const { root } = refs;
 
+                root.innerHTML = '';
                 while(root.hasChildNodes()) {
                     root.removeChild(root.firstChild);
                 }

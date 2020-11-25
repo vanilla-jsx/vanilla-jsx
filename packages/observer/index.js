@@ -46,6 +46,7 @@ export const createRxElement = (Tag) => {
             });
 
             observe(() => {
+                element.innerHTML = '';
                 while(element.hasChildNodes()) {
                     element.removeChild(element.firstChild);
                 }

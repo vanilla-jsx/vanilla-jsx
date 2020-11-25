@@ -17,6 +17,7 @@ module.exports = function (constructor) {
             if (!renderLock) {
                 renderLock = true;
                 const activeElement = shadow.activeElement;
+                shadow.innerHTML = '';
                 while(shadow.hasChildNodes()) {
                     shadow.removeChild(shadow.firstChild);
                 }

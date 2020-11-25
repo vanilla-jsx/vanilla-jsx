@@ -1,0 +1,67 @@
+import SourceCode from '../../components/SourceCode.js';
+
+# create Offscreen Canvas
+
+<SourceCode code={`const content = <canvas ref={(e) => {
+    const ctx = e.getContext('2d');
+    ctx.fillStyle = 'green';
+    ctx.fillRect(10, 10, 100, 100);
+    ctx.fillStyle = 'yellow';
+    ctx.fillText("Hello world", 10, 50);
+    ctx.fillStyle = 'green';
+    ctx.fillRect(60, 60, 100, 100);
+    ctx.fillStyle = 'yellow';
+    ctx.fillText("Hello world", 60, 100);
+}}></canvas>;
+document.body.append(content);`}></SourceCode>
+
+> Pre-render similar primitives or repeating objects on an offscreen canvas
+
+If you find yourself repeating some of the same drawing operations on each animation frame, consider offloading them to an offscreen canvas. You can then render the offscreen image to your primary canvas as often as needed, without unnecessarily repeating the steps needed to generate it in the first place.
+
+<SourceCode code={`const offscreen = <canvas ref={(e) => {
+    const ctx = e.getContext('2d');
+    ctx.fillStyle = 'green';
+    ctx.fillRect(10, 10, 100, 100);
+    ctx.fillStyle = 'yellow';
+    ctx.fillText("Hello world", 10, 50);
+}}></canvas>;
+const content = <canvas ref={(e) => {
+    const ctx = e.getContext('2d');
+    ctx.drawImage(offscreen, 0, 0);
+    ctx.drawImage(offscreen, 50, 50);
+}}></canvas>;
+document.body.append(content);`}></SourceCode>
+
+## Observer
+
+<SourceCode code={`import { rx, observe } from '@vanilla-jsx/observer';
+const num = rx(0);
+setInterval(() => {
+    num.value++;
+}, 1000);
+const content = <canvas ref={(e) => {
+    const ctx = e.getContext('2d');
+    observe(() => {
+        ctx.clearRect(0, 0, e.width, e.height);
+        ctx.font = ${'`${num + 12}'}px serif${'`'};
+        ctx.fillText(num, 10, 30 + num);
+    });
+}}></canvas>;
+document.body.append(content);`}></SourceCode>
+
+## Observer Canvas
+
+<SourceCode code={`import { rx, createRxElement } from '@vanilla-jsx/observer';
+const num = rx(0);
+const Canvas = createRxElement('canvas');
+setInterval(() => {
+    num.value++;
+}, 1000);
+const content = <Canvas ref={(e) => {
+    const ctx = e.getContext('2d');
+    ctx.clearRect(0, 0, e.width, e.height);
+    ctx.font = ${'`${num + 12}'}px serif${'`'};
+    ctx.fillText(num, 10, 30 + num);
+}}></Canvas>;
+document.body.append(content);`}></SourceCode>

@@ -28,6 +28,10 @@ const routes = [
         component: () => import('./jquery.mdx')
     },
     {
+        path: '/canvas',
+        component: () => import('./canvas.mdx')
+    },
+    {
         path: '/component',
         component: () => import('./component')
     },
@@ -73,6 +77,9 @@ export default routes.map((ele) => {
                                 <li>
                                     <p>Advanced</p>
                                     <ul>
+                                        <li>
+                                            <a href={`#${basePath}/canvas`}>create Offscreen Canvas</a>
+                                        </li>
                                         <li>
                                             <a href={`#${basePath}/jquery`}>with jQuery, but not selector</a>
                                         </li>
