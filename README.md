@@ -45,6 +45,7 @@ then, coding js with jsx.
     - [PascalCase is FunctionExec](https://vanilla-jsx.github.io/vanilla-jsx/#/PascalCase)
     - [with Reactive - @vanilla-jsx/observer](https://vanilla-jsx.github.io/vanilla-jsx/#/observer)
 - Advanced
+    - [create Offscreen Canvas](https://vanilla-jsx.github.io/vanilla-jsx/#/canvas)
     - [with jQuery, but not selector](https://vanilla-jsx.github.io/vanilla-jsx/#/jquery)
     - [with Markdown - @vanilla-jsx/mdx-loader](https://vanilla-jsx.github.io/vanilla-jsx/#/mdx)
 
