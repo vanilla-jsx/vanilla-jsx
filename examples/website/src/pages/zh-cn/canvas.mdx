@@ -1,0 +1,67 @@
+import SourceCode from '../../components/SourceCode.js';
+
+# 创建离屏 Canvas
+
+<SourceCode code={`const content = <canvas ref={(e) => {
+    const ctx = e.getContext('2d');
+    ctx.fillStyle = 'green';
+    ctx.fillRect(10, 10, 100, 100);
+    ctx.fillStyle = 'yellow';
+    ctx.fillText("Hello world", 10, 50);
+    ctx.fillStyle = 'green';
+    ctx.fillRect(60, 60, 100, 100);
+    ctx.fillStyle = 'yellow';
+    ctx.fillText("Hello world", 60, 100);
+}}></canvas>;
+document.body.append(content);`}></SourceCode>
+
+> 在离屏 canvas 上预渲染相似的图形或重复的对象
+
+如果发现自己在每个动画帧上重复了一些相同的绘制操作，请考虑将其分流到屏幕外的画布上。 然后，您可以根据需要频繁地将屏幕外图像渲染到主画布上，而不必首先重复生成该图像的步骤。
+
+<SourceCode code={`const offscreen = <canvas ref={(e) => {
+    const ctx = e.getContext('2d');
+    ctx.fillStyle = 'green';
+    ctx.fillRect(10, 10, 100, 100);
+    ctx.fillStyle = 'yellow';
+    ctx.fillText("Hello world", 10, 50);
+}}></canvas>;
+const content = <canvas ref={(e) => {
+    const ctx = e.getContext('2d');
+    ctx.drawImage(offscreen, 0, 0);
+    ctx.drawImage(offscreen, 50, 50);
+}}></canvas>;
+document.body.append(content);`}></SourceCode>
+
+## Observer
+
+<SourceCode code={`import { rx, observe } from '@vanilla-jsx/observer';
+const num = rx(0);
+setInterval(() => {
+    num.value++;
+}, 1000);
+const content = <canvas ref={(e) => {
+    const ctx = e.getContext('2d');
+    observe(() => {
+        ctx.clearRect(0, 0, e.width, e.height);
+        ctx.font = ${'`${num + 12}'}px serif${'`'};
+        ctx.fillText(num, 10, 30 + num);
+    });
+}}></canvas>;
+document.body.append(content);`}></SourceCode>
+
+## Observer Canvas
+
+<SourceCode code={`import { rx, createRxElement } from '@vanilla-jsx/observer';
+const num = rx(0);
+const Canvas = createRxElement('canvas');
+setInterval(() => {
+    num.value++;
+}, 1000);
+const content = <Canvas ref={(e) => {
+    const ctx = e.getContext('2d');
+    ctx.clearRect(0, 0, e.width, e.height);
+    ctx.font = ${'`${num + 12}'}px serif${'`'};
+    ctx.fillText(num, 10, 30 + num);
+}}></Canvas>;
+document.body.append(content);`}></SourceCode>

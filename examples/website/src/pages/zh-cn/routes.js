@@ -28,6 +28,10 @@ const routes = [
         component: () => import('./jquery.mdx')
     },
     {
+        path: '/canvas',
+        component: () => import('./canvas.mdx')
+    },
+    {
         path: '/component',
         component: () => import('./component')
     },
@@ -73,6 +77,9 @@ export default routes.map((ele) => {
                                 <li>
                                     <p>进阶</p>
                                     <ul>
+                                        <li>
+                                            <a href={`#${basePath}/canvas`}>创建离屏 Canvas</a>
+                                        </li>
                                         <li>
                                             <a href={`#${basePath}/jquery`}>使用 jquery, 但不使用选择器</a>
                                         </li>

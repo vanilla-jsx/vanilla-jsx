@@ -26,7 +26,8 @@ export default (code, { dependences = [] } = {}) =>  `
             } else if (path === '@vanilla-jsx/observer') {
                 return {
                     rx: rx,
-                    createRxElement: createRxElement
+                    createRxElement: createRxElement,
+                    observe: observe
                 }
             }
         }
