@@ -1,0 +1,36 @@
+import SourceCode from '../../components/SourceCode.js';
+
+# 渲染 HTML 字符串 - @vanilla-jsx/ssr
+
+> 在 js 中写 HTML 字符串拥有高亮.
+>
+> 服务端渲染复用客户端组件.
+
+## 安装
+
+```bash
+npm i @vanilla-jsx/ssr
+```
+
+## API
+
+### createSSRElement(tag: string): Component
+
+> 组件返回 HTML 字符串
+
+<SourceCode code={`import { createSSRElement } from '@vanilla-jsx/ssr';
+const Div = createSSRElement('div');
+const Img = createSSRElement('img');
+const str = <Div attr="something">children<Img src="xx"/></Div>
+console.log(str); // '<div attr="something">children<img src="xx"/></div>'`} preview={false}></SourceCode>
+
+### createSplitElement(tag: string): Component
+
+> 组件返回字符串数组, 连接成为 HTML 字符串
+
+<SourceCode code={`import { createSplitElement } from '@vanilla-jsx/ssr';
+const Div = createSplitElement('div');
+const Img = createSplitElement('img');
+const arr = <Div attr="something">children<Img src="xx"/></Div>
+console.log(arr); // ['<', 'div', ', ' attr="something"', '>', 'children', '<', 'img', ', ' src="xx"', '/>', '</', 'div', '>']
+console.log(arr.join('')); // '<div attr="something">children<img src="xx"/></div>'`} preview={false}></SourceCode>

@@ -32,6 +32,10 @@ const routes = [
         component: () => import('./canvas.mdx')
     },
     {
+        path: '/ssr',
+        component: () => import('./ssr.mdx')
+    },
+    {
         path: '/component',
         component: () => import('./component')
     },
@@ -82,6 +86,9 @@ export default routes.map((ele) => {
                                         </li>
                                         <li>
                                             <a href={`#${basePath}/jquery`}>with jQuery, but not selector</a>
+                                        </li>
+                                        <li>
+                                            <a href={`#${basePath}/ssr`}>render HTML str - @vanilla-jsx/ssr</a>
                                         </li>
                                         <li>
                                             <a href={`#${basePath}/mdx`}>with Markdown - @vanilla-jsx/mdx-loader</a>

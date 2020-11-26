@@ -32,6 +32,10 @@ const routes = [
         component: () => import('./canvas.mdx')
     },
     {
+        path: '/ssr',
+        component: () => import('./ssr.mdx')
+    },
+    {
         path: '/component',
         component: () => import('./component')
     },
@@ -82,6 +86,9 @@ export default routes.map((ele) => {
                                         </li>
                                         <li>
                                             <a href={`#${basePath}/jquery`}>使用 jquery, 但不使用选择器</a>
+                                        </li>
+                                        <li>
+                                            <a href={`#${basePath}/ssr`}>渲染 HTML 字符串 - @vanilla-jsx/ssr</a>
                                         </li>
                                         <li>
                                             <a href={`#${basePath}/mdx`}>在 Markdown 中使用 - @vanilla-jsx/mdx-loader</a>
