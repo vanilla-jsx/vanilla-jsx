@@ -1,5 +1,5 @@
 {
-  "name": "@vanilla-jsx/jsx-runtime",
+  "name": "@vanilla-jsx/ssr",
   "version": "1.4.0",
   "main": "index.js",
   "repository": {
@@ -17,5 +17,8 @@
   "files": [
     "index.js",
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "@nx-js/observer-util": "^4.2.2"
+  }
 }

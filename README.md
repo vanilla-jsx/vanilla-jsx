@@ -47,6 +47,7 @@ then, coding js with jsx.
 - Advanced
     - [create Offscreen Canvas](https://vanilla-jsx.github.io/vanilla-jsx/#/canvas)
     - [with jQuery, but not selector](https://vanilla-jsx.github.io/vanilla-jsx/#/jquery)
+    - [render HTML str - @vanilla-jsx/ssr](https://vanilla-jsx.github.io/vanilla-jsx/#/ssr)
     - [with Markdown - @vanilla-jsx/mdx-loader](https://vanilla-jsx.github.io/vanilla-jsx/#/mdx)
 
 and more: [https://vanilla-jsx.github.io/vanilla-jsx/](https://vanilla-jsx.github.io/vanilla-jsx/)

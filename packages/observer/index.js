@@ -54,7 +54,7 @@ export const createRxElement = (Tag) => {
 
                 } else if (children instanceof Array) {
                     children.forEach((child) => {
-                        element.append(child);
+                        child && element.append(child);
                     });
                 } else {
                     element.append(children);
