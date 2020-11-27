@@ -32,6 +32,10 @@ const routes = [
         component: () => import('./canvas.mdx')
     },
     {
+        path: '/ui',
+        component: () => import('./ui.mdx')
+    },
+    {
         path: '/component',
         component: () => import('./component')
     },
@@ -85,6 +89,14 @@ export default routes.map((ele) => {
                                         </li>
                                         <li>
                                             <a href={`#${basePath}/mdx`}>with Markdown - @vanilla-jsx/mdx-loader</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <p>UI Component</p>
+                                    <ul>
+                                        <li>
+                                            <a href={`#${basePath}/ui`}>@vanilla-jsx/ui</a>
                                         </li>
                                     </ul>
                                 </li>

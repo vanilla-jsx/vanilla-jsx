@@ -1,6 +1,6 @@
-exports.jsxs = exports.jsx = (tag, { ref, children, ...props } = {}) => {
+exports.jsxs = exports.jsx = (tag, { is, ref, children, ...props } = {}) => {
     if (typeof tag === 'string') {
-        const element = document.createElement(tag);
+        const element = document.createElement(tag, { is });
 
         Object.keys(props).forEach((key) => {
             if (!props[key]) {

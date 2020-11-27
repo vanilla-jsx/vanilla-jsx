@@ -8,7 +8,8 @@ export default (code, { dependences = [] } = {}) =>  `
     ${(() => {
         if (process.env.NODE_ENV === 'development') {
             return `<script src="/jsx-runtime/dist/main.js"></script>
-    <script src="/observer/dist/main.js"></script>`;
+    <script src="/observer/dist/main.js"></script>
+    <script src="/ui/dist/main.js"></script>`;
         } else {
             return `<script src="https://unpkg.com/@vanilla-jsx/jsx-runtime@1.3.3/dist/main.js"></script>
     <script src="https://unpkg.com/@vanilla-jsx/observer@1.3.3/dist/main.js"></script>`;
