@@ -4,6 +4,8 @@ import SourceCode from '../../components/SourceCode.js';
 
 ![Koa Middleware](https://tu.sunpma.com/imgs/2020/11/d352677798dc5485.webp)
 
+> 您应当先了解 [Koa](https://github.com/koajs/koa), 然后继续:
+
 <SourceCode code={`import Koa from 'koa';
 import { createJsxMiddleware } from '@vanilla-jsx/koa';
 const app = new Koa();
@@ -29,7 +31,7 @@ app.use(<RegistryManager>
 </RegistryManager>);
 app.listen(3000);`} preview={false}></SourceCode>
 
-Do yourself by [koa-simple source](https://github.com/vanilla-jsx/vanilla-jsx/tree/main/examples/koa-simple)
+您可以自己尝试, 通过 [koa-simple 源码](https://github.com/vanilla-jsx/vanilla-jsx/tree/main/examples/koa-simple)
 
 ## API
 
@@ -51,4 +53,24 @@ const app = new Koa();
 app.use(<JsxMiddleware use={(ctx, next) => next()}>
     <JsxMiddleware use={(ctx, next) => ctx.body = 'doSomething'} />
 </JsxMiddleware>);
+app.listen(3000);`} preview={false}></SourceCode>
+
+### createJsxRouter(koaRouter: KoaRouter): { [ 'get' | 'put' | 'post' | 'patch' | 'delete' | 'del' | 'param' | 'use' ]: Component }
+
+> 您应当先了解 [Koa Router](https://github.com/koajs/router), 然后继续:
+>
+> 您可以自己尝试 [koa-router 源码](https://github.com/vanilla-jsx/vanilla-jsx/tree/main/examples/koa-router)
+
+<SourceCode code={`import Koa from 'koa';
+import KoaRouter from '@koa/router';
+import { createJsxRouter, JsxMiddleWare } from '@vanilla-jsx/koa';
+const app = new Koa();
+const JsxRouter = createJsxRouter(new KoaRouter);
+app.use(<JsxRouter.routes>
+    <JsxMiddleWare use={() => console.log('doSomething')}></JsxMiddleWare>
+    <JsxRouter.get path="/a" use={(ctx) => ctx.body = '/a'}></JsxRouter.get>
+    <JsxRouter.post path="/b">
+        <JsxMiddleWare use={(ctx) => ctx.body = '/b'}></JsxMiddleWare>
+    </JsxRouter.post>
+</JsxRouter.routes>);
 app.listen(3000);`} preview={false}></SourceCode>
