@@ -11,7 +11,9 @@ function createJsxMiddleware (m) {
                 } else if (typeof children === 'function') {
                     await children(ctx);
                 }
-                next && await next();
+                if (typeof next === 'function') {
+                    await next();
+                }
             });
         }
     }
