@@ -91,6 +91,9 @@ export default routes.map((ele) => {
                                             <a href={`#${basePath}/ssr`}>渲染 HTML 字符串 - @vanilla-jsx/ssr</a>
                                         </li>
                                         <li>
+                                            <a href={`#${basePath}/koa`}>可视化 Koa 中间件 - @vanilla-jsx/koa</a>
+                                        </li>
+                                        <li>
                                             <a href={`#${basePath}/mdx`}>在 Markdown 中使用 - @vanilla-jsx/mdx-loader</a>
                                         </li>
                                     </ul>

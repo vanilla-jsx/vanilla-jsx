@@ -1,0 +1,54 @@
+import SourceCode from '../../components/SourceCode.js';
+
+# 可视化 Koa 中间件 - @vanilla-jsx/koa
+
+![](https://tu.sunpma.com/imgs/2020/11/d352677798dc5485.webp)
+
+<SourceCode code={`import Koa from 'koa';
+import { createJsxMiddleware } from '@vanilla-jsx/koa';
+const app = new Koa();
+const RegistryManager = createJsxMiddleware((ctx, next) => next());
+const StatusCodeRedirect = createJsxMiddleware((ctx, next) => next());
+const ErrorHandler = createJsxMiddleware((ctx, next) => next());
+const CacheMiddleware = createJsxMiddleware((ctx, next) => next());
+const SessionMiddleware = createJsxMiddleware((ctx, next) => next());
+const RoutesMiddleware = createJsxMiddleware((ctx, next) => next());
+const PylonsApp = createJsxMiddleware((ctx, next) => ctx.body = 'doSomething');
+app.use(<RegistryManager>
+    <StatusCodeRedirect>
+        <ErrorHandler>
+            <CacheMiddleware>
+                <SessionMiddleware>
+                    <RoutesMiddleware>
+                        <PylonsApp />
+                    </RoutesMiddleware>
+                </SessionMiddleware>
+            </CacheMiddleware>
+        </ErrorHandler>
+    </StatusCodeRedirect>
+</RegistryManager>);
+app.listen(3000);`} preview={false}></SourceCode>
+
+Do yourself by [koa-simple source]()
+
+## API
+
+### createJsxMiddleware(middleware: Function): Component
+
+> 组件返回一个 Koa 中间件.
+
+### JsxMiddleware(props: { use: Function, children: Function }): Function
+
+> JsxMiddleware 是一个组件, 它返回一个 Koa 中间件.
+>
+> use 是一个 Koa 中间件.
+>
+> children 是一个 Koa 中间件.
+
+<SourceCode code={`import Koa from 'koa';
+import { createJsxMiddleware } from '@vanilla-jsx/koa';
+const app = new Koa();
+app.use(<JsxMiddleware use={(ctx, next) => next()}>
+    <JsxMiddleware use={(ctx, next) => ctx.body = 'doSomething'} />
+</JsxMiddleware>);
+app.listen(3000);`} preview={false}></SourceCode>

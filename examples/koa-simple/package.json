@@ -1,0 +1,23 @@
+{
+  "name": "@vanilla-jsx/koa-simple",
+  "version": "1.4.0",
+  "private": "true",
+  "description": "",
+  "main": "babel.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/preset-env": "^7.12.7",
+    "@babel/preset-react": "^7.12.7",
+    "@vanilla-jsx/jsx-runtime": "^1.4.0",
+    "@vanilla-jsx/koa": "^1.2.2",
+    "koa": "^2.13.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/node": "^7.12.6"
+  }
+}

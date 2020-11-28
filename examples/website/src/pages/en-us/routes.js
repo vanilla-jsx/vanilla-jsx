@@ -36,6 +36,10 @@ const routes = [
         component: () => import('./ssr.mdx')
     },
     {
+        path: '/koa',
+        component: () => import('./koa.mdx')
+    },
+    {
         path: '/component',
         component: () => import('./component')
     },
@@ -89,6 +93,9 @@ export default routes.map((ele) => {
                                         </li>
                                         <li>
                                             <a href={`#${basePath}/ssr`}>render HTML str - @vanilla-jsx/ssr</a>
+                                        </li>
+                                        <li>
+                                            <a href={`#${basePath}/koa`}>visual Koa Middleware - @vanilla-jsx/koa</a>
                                         </li>
                                         <li>
                                             <a href={`#${basePath}/mdx`}>with Markdown - @vanilla-jsx/mdx-loader</a>
