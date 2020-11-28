@@ -36,6 +36,10 @@ const routes = [
         component: () => import('./ssr.mdx')
     },
     {
+        path: '/koa',
+        component: () => import('./koa.mdx')
+    },
+    {
         path: '/component',
         component: () => import('./component')
     },
