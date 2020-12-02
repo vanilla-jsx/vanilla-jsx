@@ -1,0 +1,24 @@
+{
+  "name": "@vanilla-jsx/example-ppt",
+  "version": "1.4.0",
+  "private": "true",
+  "description": "",
+  "main": "babel.config.js",
+  "scripts": {
+    "serve": "NODE_ENV=development webpack serve",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.12.7",
+    "@babel/preset-env": "^7.12.7",
+    "@babel/preset-react": "^7.12.7",
+    "@vanilla-jsx/jsx-runtime": "^1.4.0",
+    "babel-loader": "^8.2.1",
+    "webpack": "^5.6.0",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
