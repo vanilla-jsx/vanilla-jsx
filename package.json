@@ -7,7 +7,7 @@
     "build:observer": "cd packages/observer && webpack",
     "serve": "cd examples/website && NODE_ENV=development webpack serve",
     "build:website": "cd examples/website && webpack",
-    "deploy:website": "npm run build:website && gh-pages -d ./examples/website"
+    "deploy:website": "npm run build:website && gh-pages -d ./examples/website -s \"{index.html,dist/**/*}\""
   },
   "devDependencies": {
     "@babel/cli": "^7.12.1",
