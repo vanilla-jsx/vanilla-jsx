@@ -21,6 +21,8 @@
   "dependencies": {
     "@nx-js/observer-util": "^4.2.2",
     "@vanilla-jsx/jsx-runtime": "^1.5.3",
-    "lodash.flattendeep": "^4.4.0"
+    "lodash.flattendeep": "^4.4.0",
+    "webpack": "^5.11.0",
+    "webpack-cli": "^4.2.0"
   }
 }

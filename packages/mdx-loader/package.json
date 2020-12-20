@@ -18,6 +18,8 @@
     "index.js"
   ],
   "dependencies": {
-    "@mdx-js/mdx": "^1.6.21"
+    "@mdx-js/mdx": "^1.6.21",
+    "webpack": "^5.11.0",
+    "webpack-cli": "^4.2.0"
   }
 }

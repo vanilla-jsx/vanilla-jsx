@@ -2,9 +2,7 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "postinstall": "lerna bootstrap && npm run build:jsx-runtime && npm run build:observer",
-    "build:jsx-runtime": "cd packages/jsx-runtime && webpack",
-    "build:observer": "cd packages/observer && webpack",
+    "postinstall": "lerna bootstrap && lerna run build",
     "serve": "cd examples/website && NODE_ENV=development webpack serve",
     "build:website": "cd examples/website && webpack",
     "deploy:website": "npm run build:website && gh-pages -d ./examples/website -s \"{index.html,dist/**/*}\""
@@ -17,8 +15,6 @@
     "babel-loader": "^8.2.1",
     "gh-pages": "^3.1.0",
     "lerna": "^3.22.1",
-    "webpack": "^5.4.0",
-    "webpack-cli": "^4.2.0",
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {}

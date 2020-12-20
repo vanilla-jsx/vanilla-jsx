@@ -11,5 +11,9 @@
   "gitHead": "5b39201c387f7edfe2712d460395e5551e1fe285",
   "files": [
     "index.js"
-  ]
+  ],
+  "dependencies": {
+    "webpack": "^5.11.0",
+    "webpack-cli": "^4.2.0"
+  }
 }

@@ -17,6 +17,8 @@
     "@vanilla-jsx/router": "^1.5.3",
     "@vanilla-jsx/ssr": "^1.5.3",
     "prismjs": "^1.22.0",
-    "regenerator-runtime": "^0.13.7"
+    "regenerator-runtime": "^0.13.7",
+    "webpack": "^5.11.0",
+    "webpack-cli": "^4.2.0"
   }
 }
