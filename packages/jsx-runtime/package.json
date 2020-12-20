@@ -17,5 +17,8 @@
   "files": [
     "index.js",
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "lodash.flattendeep": "^4.4.0"
+  }
 }

@@ -19,6 +19,7 @@
     "dist"
   ],
   "dependencies": {
-    "@nx-js/observer-util": "^4.2.2"
+    "@nx-js/observer-util": "^4.2.2",
+    "lodash.flattendeep": "^4.4.0"
   }
 }

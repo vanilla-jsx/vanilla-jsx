@@ -14,6 +14,7 @@
     "@vanilla-jsx/jsx-runtime": "^1.4.0",
     "@vanilla-jsx/mdx-loader": "^1.2.2",
     "@vanilla-jsx/observer": "^1.4.0",
+    "@vanilla-jsx/router": "^1.4.0",
     "@vanilla-jsx/ssr": "^1.4.0",
     "prismjs": "^1.22.0",
     "regenerator-runtime": "^0.13.7"

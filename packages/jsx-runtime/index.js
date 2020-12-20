@@ -1,3 +1,5 @@
+const flatten = require('lodash.flattendeep');
+
 exports.jsxs = exports.jsx = (tag, { ref, children, ...props } = {}) => {
     if (typeof tag === 'string') {
         const element = document.createElement(tag);
@@ -14,12 +16,12 @@ exports.jsxs = exports.jsx = (tag, { ref, children, ...props } = {}) => {
 
         if (!children) {
 
-        } else if (children instanceof Array) {
+        } else {
+            children = Array.isArray(children) ? flatten(children) : [children];
+
             children.forEach((child) => {
                 child && element.append(child);
             });
-        } else {
-            element.append(children);
         }
 
         if (!ref) {
@@ -43,12 +45,12 @@ exports.Fragment = ({ children } = {}) => {
 
     if (!children) {
 
-    } else if (children instanceof Array) {
-        children.forEach((child) => {
-            element.append(child);
-        });
     } else {
-        element.append(children);
+        children = Array.isArray(children) ? flatten(children) : [children];
+
+        children.forEach((child) => {
+            child && element.append(child);
+        });
     }
 
     return element;

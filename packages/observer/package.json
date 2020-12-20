@@ -20,6 +20,7 @@
   ],
   "dependencies": {
     "@nx-js/observer-util": "^4.2.2",
-    "@vanilla-jsx/jsx-runtime": "^1.4.0"
+    "@vanilla-jsx/jsx-runtime": "^1.4.0",
+    "lodash.flattendeep": "^4.4.0"
   }
 }

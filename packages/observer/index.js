@@ -1,3 +1,4 @@
+import flatten from 'lodash.flattendeep';
 import { observable, isObservable, observe, unobserve, raw } from '@nx-js/observer-util';
 
 export const rx = (value) => {
@@ -52,12 +53,12 @@ export const createRxElement = (Tag) => {
                 }
                 if (!children) {
 
-                } else if (children instanceof Array) {
+                } else {
+                    children = Array.isArray(children) ? flatten(children) : [children];
+
                     children.forEach((child) => {
                         child && element.append(child);
                     });
-                } else {
-                    element.append(children);
                 }
             });
 
