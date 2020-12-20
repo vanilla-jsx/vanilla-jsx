@@ -1,6 +1,6 @@
 {
   "name": "@vanilla-jsx/ssr-jsx-runtime",
-  "version": "1.4.0",
+  "version": "1.5.3",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -9,7 +9,7 @@
   "author": "BoltDoggy",
   "license": "ISC",
   "description": "vanilla jsx without Vue.js or React.js",
-  "gitHead": "ee71ec986d2afda58fe80f3f3f23add0de322c3c",
+  "gitHead": "5b39201c387f7edfe2712d460395e5551e1fe285",
   "bugs": {
     "url": "https://github.com/vanilla-jsx/vanilla-jsx/issues"
   },
@@ -20,6 +20,6 @@
   ],
   "dependencies": {
     "@nx-js/observer-util": "^4.2.2",
-    "@vanilla-jsx/jsx-runtime": "^1.4.0"
+    "@vanilla-jsx/jsx-runtime": "^1.5.3"
   }
 }

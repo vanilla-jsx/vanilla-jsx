@@ -1,5 +1,5 @@
 {
-  "name": "@vanilla-jsx/jsx-runtime",
+  "name": "@vanilla-jsx/router",
   "version": "1.5.3",
   "main": "index.js",
   "repository": {
@@ -19,6 +19,8 @@
     "dist"
   ],
   "dependencies": {
+    "@nx-js/observer-util": "^4.2.2",
+    "@vanilla-jsx/jsx-runtime": "^1.5.3",
     "lodash.flattendeep": "^4.4.0"
   }
 }

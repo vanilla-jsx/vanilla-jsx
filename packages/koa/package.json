@@ -1,6 +1,6 @@
 {
   "name": "@vanilla-jsx/koa",
-  "version": "1.2.2",
+  "version": "1.5.3",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -9,12 +9,15 @@
   "author": "BoltDoggy",
   "license": "ISC",
   "description": "vanilla jsx without Vue.js or React.js",
-  "gitHead": "8565a75a2a533bd511c654ac34748010ddb3db35",
+  "gitHead": "5b39201c387f7edfe2712d460395e5551e1fe285",
   "bugs": {
     "url": "https://github.com/vanilla-jsx/vanilla-jsx/issues"
   },
   "homepage": "https://github.com/vanilla-jsx/vanilla-jsx#readme",
   "files": [
     "index.js"
-  ]
+  ],
+  "dependencies": {
+    "lodash.flattendeep": "^4.4.0"
+  }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@vanilla-jsx/website",
-  "version": "1.4.0",
+  "version": "1.5.3",
   "private": "true",
   "description": "",
   "main": "babel.config.js",
@@ -10,11 +10,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@vanilla-jsx/component": "^1.4.0",
-    "@vanilla-jsx/jsx-runtime": "^1.4.0",
+    "@vanilla-jsx/component": "^1.5.3",
+    "@vanilla-jsx/jsx-runtime": "^1.5.3",
     "@vanilla-jsx/mdx-loader": "^1.2.2",
-    "@vanilla-jsx/observer": "^1.4.0",
-    "@vanilla-jsx/ssr": "^1.4.0",
+    "@vanilla-jsx/observer": "^1.5.3",
+    "@vanilla-jsx/router": "^1.5.3",
+    "@vanilla-jsx/ssr": "^1.5.3",
     "prismjs": "^1.22.0",
     "regenerator-runtime": "^0.13.7"
   }
