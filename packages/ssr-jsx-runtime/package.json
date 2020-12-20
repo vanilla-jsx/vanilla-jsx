@@ -1,6 +1,6 @@
 {
   "name": "@vanilla-jsx/ssr-jsx-runtime",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -20,6 +20,6 @@
   ],
   "dependencies": {
     "@nx-js/observer-util": "^4.2.2",
-    "@vanilla-jsx/jsx-runtime": "^1.5.1"
+    "@vanilla-jsx/jsx-runtime": "^1.5.2"
   }
 }
