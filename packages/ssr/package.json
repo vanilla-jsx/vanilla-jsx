@@ -9,7 +9,7 @@
   "author": "BoltDoggy",
   "license": "ISC",
   "description": "vanilla jsx without Vue.js or React.js",
-  "gitHead": "faae69bb6577833b05b597d4d1d9dad8bd35e492",
+  "gitHead": "d62b9c5fd5275ec3a86c5f3f115f6b6af96d34fa",
   "bugs": {
     "url": "https://github.com/vanilla-jsx/vanilla-jsx/issues"
   },
