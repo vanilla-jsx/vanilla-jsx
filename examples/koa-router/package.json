@@ -1,6 +1,6 @@
 {
   "name": "@vanilla-jsx/example-koa-router",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "private": "true",
   "description": "",
   "main": "babel.config.js",
@@ -14,8 +14,8 @@
     "@babel/preset-env": "^7.12.7",
     "@babel/preset-react": "^7.12.7",
     "@koa/router": "^10.0.0",
-    "@vanilla-jsx/jsx-runtime": "^1.5.0",
-    "@vanilla-jsx/koa": "^1.5.0",
+    "@vanilla-jsx/jsx-runtime": "^1.5.1",
+    "@vanilla-jsx/koa": "^1.5.1",
     "koa": "^2.13.0"
   },
   "devDependencies": {
